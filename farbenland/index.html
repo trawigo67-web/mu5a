@@ -166,6 +166,8 @@ footer p{margin:4px 0}
 .inq b{color:var(--teal)}
 .pdfbtn{display:inline-flex;gap:8px;align-items:center;text-decoration:none;background:var(--gold);color:var(--ink);border-radius:999px;padding:10px 18px;font-weight:600;font-size:14px}
 @media(max-width:860px){.lbanner{grid-template-columns:1fr}.lbanner .imgs{display:none}.tabs{order:4}.lgrid{grid-template-columns:repeat(2,1fr)}}
+.card.lamp .ph{background:#2a0609;aspect-ratio:1/1;overflow:hidden}.card.lamp .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.gal.lamp{background:#2a0609}.gal.lamp .main{object-fit:contain;background:#2a0609}
 </style>
 </head>
 <body>
@@ -197,10 +199,11 @@ footer p{margin:4px 0}
    <select id="sort"></select>
   </div>
   <div class="chips" id="chips"></div>
+  <div class="chips" id="subchips"></div>
   <div class="grid" id="grid"></div>
   <button class="btn more" id="more" data-t="more"></button>
  </div>
- <section id="lampen" style="display:none">
+ <section id="lampen" style="display:none!important">
   <div class="toolbar"><h2 id="ltitle"></h2><select id="ltype"></select><a class="pdfbtn" href="Farbenland_Katalog.pdf" target="_blank" rel="noopener">📄 <span data-t="pdf"></span></a></div>
   <div class="chips" id="lchips"></div>
   <div class="grid lgrid" id="lgrid"></div>
@@ -242,7 +245,7 @@ shipLeft:'Noch {x} bis zum Gratis-Versand',shipFree:'Du bekommst Gratis-Versand 
 i1t:'Echte Handarbeit',i1p:'Jedes Stück ist handgemacht – viele sind Unikate, die es nur einmal gibt.',i2t:'Sicher bezahlen',i2p:'PayPal, Klarna-Ratenkauf und Kreditkarte. Versand innerhalb Deutschlands, gratis ab 75 €.',i3t:'Besuch uns im Laden',
 foot:'Orientalische Wohnkultur, Mosaiklampen, Kelims und Keramik – direkt aus Anatolien nach Köln.',shop:'Shop',contact:'Kontakt',descNote:'',
 tShop:'Shop',tLamp:'Lampen-Katalog',lampCta:'Lampen-Katalog ansehen',lbT:'Orientalische Lampen',lbP:'Über 550 handgefertigte Lampen in 13 Kollektionen – Hänge-, Wand-, Steh- und Tischleuchten. Im Laden ansehen oder anfragen.',pdf:'Katalog als PDF',allCol:'Alle Kollektionen',allType:'Alle Arten',ask:'Preis auf Anfrage',askTxt:'Diese Lampe bekommst du bei uns im Laden oder auf Bestellung. Frag uns nach Preis und Lieferzeit:',wid:'Breite',hei:'Höhe',wei:'Gewicht',lamps:'Lampen',col:'Kollektion',
-c:{keramik:'Keramik & Wandkunst',teppich:'Teppiche & Kelims',sitz:'Şark Köşesi & Sitzecken',kissen:'Kissen & Textilien',schmuck:'Schmuck & Tesbih',antik:'Antiquitäten & Unikate',deko:'Taschen & Deko'}},
+lampOrder:'Lampen per E-Mail bestellen',lampNote:'Lampen bestellst du direkt bei uns – wir melden uns mit Lieferzeit und Versand.',allCol:'Alle Kollektionen',c:{lampen:'Orientalische Lampen',keramik:'Keramik & Wandkunst',teppich:'Teppiche & Kelims',sitz:'Şark Köşesi & Sitzecken',kissen:'Kissen & Textilien',schmuck:'Schmuck & Tesbih',antik:'Antiquitäten & Unikate',deko:'Taschen & Deko'}},
 tr:{usp1:'75 € üzeri ücretsiz kargo',usp2:'Klarna & PayPal ile taksit',usp3:'Köln-Mülheim’de mağaza',cart:'Sepet',search:'Lamba, kilim, seramik ara …',
 heroT:'Doğu’dan el yapımı eşsiz parçalar',heroP:'Kütahya çinisi, hakiki Uşak kilimleri, Şark Köşesi takımları, takı ve antika hazineler – Anadolu’dan seçildi, Köln’de sizi bekliyor.',
 shopAll:'Keşfet',visit:'Mağazayı ziyaret et',onlyAvail:'Sadece stoktakiler',more:'Daha fazla göster',all:'Tüm ürünler',
@@ -253,7 +256,7 @@ shipLeft:'Ücretsiz kargoya {x} kaldı',shipFree:'Ücretsiz kargo kazandın ✓'
 i1t:'Gerçek el işçiliği',i1p:'Her parça el yapımı – çoğu tek ve eşsiz.',i2t:'Güvenli ödeme',i2p:'PayPal, Klarna taksit ve kredi kartı. Almanya içi kargo, 75 € üzeri ücretsiz.',i3t:'Mağazamıza bekleriz',
 foot:'Doğu ev kültürü, mozaik lambalar, kilimler ve çini – Anadolu’dan doğrudan Köln’e.',shop:'Mağaza',contact:'İletişim',descNote:'Ürün açıklaması Almancadır.',
 tShop:'Mağaza',tLamp:'Lamba Kataloğu',lampCta:'Lamba kataloğunu gör',lbT:'Oryantal Lambalar',lbP:'13 koleksiyonda 550’den fazla el yapımı lamba – sarkıt, aplik, lambader ve masa lambası. Mağazada görün veya sorun.',pdf:'PDF katalog',allCol:'Tüm koleksiyonlar',allType:'Tüm türler',ask:'Fiyat için sorunuz',askTxt:'Bu lambayı mağazamızda veya sipariş üzerine bulabilirsiniz. Fiyat ve teslim süresi için bize yazın:',wid:'Genişlik',hei:'Yükseklik',wei:'Ağırlık',lamps:'lamba',col:'Koleksiyon',
-c:{keramik:'Çini & Duvar Sanatı',teppich:'Halı & Kilim',sitz:'Şark Köşesi & Oturma Grupları',kissen:'Yastık & Tekstil',schmuck:'Takı & Tesbih',antik:'Antika & Tek Parçalar',deko:'Çanta & Dekor'}},
+lampOrder:'Lambaları e-posta ile sipariş et',lampNote:'Lambaları doğrudan bizden sipariş edersiniz – teslim süresi ve kargo için size dönüş yaparız.',allCol:'Tüm koleksiyonlar',c:{lampen:'Oryantal Lambalar',keramik:'Çini & Duvar Sanatı',teppich:'Halı & Kilim',sitz:'Şark Köşesi & Oturma Grupları',kissen:'Yastık & Tekstil',schmuck:'Takı & Tesbih',antik:'Antika & Tek Parçalar',deko:'Çanta & Dekor'}},
 en:{usp1:'Free shipping from €75',usp2:'Pay later with Klarna & PayPal',usp3:'Store in Cologne-Mülheim',cart:'Cart',search:'Search lamps, kilims, ceramics …',
 heroT:'Handmade one-of-a-kind pieces from the Orient',heroP:'Kütahya ceramics, genuine Uşak kilims, Şark Köşesi seating, jewellery and antique treasures – chosen in Anatolia, available in Cologne.',
 shopAll:'Shop now',visit:'Visit the store',onlyAvail:'In stock only',more:'Show more',all:'All products',
@@ -264,8 +267,8 @@ shipLeft:'{x} away from free shipping',shipFree:'You get free shipping ✓',remo
 i1t:'Genuine handwork',i1p:'Every piece is handmade – many are unique and exist only once.',i2t:'Pay securely',i2p:'PayPal, Klarna instalments and credit card. Shipping within Germany, free from €75.',i3t:'Visit our store',
 foot:'Oriental living, mosaic lamps, kilims and ceramics – straight from Anatolia to Cologne.',shop:'Shop',contact:'Contact',descNote:'Product description is in German.',
 tShop:'Shop',tLamp:'Lamp catalogue',lampCta:'View lamp catalogue',lbT:'Oriental lamps',lbP:'More than 550 handmade lamps in 13 collections – pendant, wall, floor and table lamps. See them in our store or ask us.',pdf:'Catalogue as PDF',allCol:'All collections',allType:'All types',ask:'Price on request',askTxt:'Available in our store or to order. Ask us for price and delivery time:',wid:'Width',hei:'Height',wei:'Weight',lamps:'lamps',col:'Collection',
-c:{keramik:'Ceramics & Wall Art',teppich:'Rugs & Kilims',sitz:'Şark Köşesi & Seating',kissen:'Cushions & Textiles',schmuck:'Jewellery & Prayer Beads',antik:'Antiques & One-offs',deko:'Bags & Décor'}}};
-const ORDER=['keramik','teppich','sitz','kissen','schmuck','antik','deko'];
+lampOrder:'Order lamps by e-mail',lampNote:'Lamps are ordered directly from us – we will get back to you with delivery time and shipping.',allCol:'All collections',c:{lampen:'Oriental Lamps',keramik:'Ceramics & Wall Art',teppich:'Rugs & Kilims',sitz:'Şark Köşesi & Seating',kissen:'Cushions & Textiles',schmuck:'Jewellery & Prayer Beads',antik:'Antiques & One-offs',deko:'Bags & Décor'}}};
+const ORDER=['lampen','keramik','teppich','sitz','kissen','schmuck','antik','deko'];
 let P=[],lang='de',cat='all',q='',sort='feat',avail=true,shown=24,cur=null,curV=0,curQ=1,curI=0,cart=[];
 const $=id=>document.getElementById(id);
 const store={get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
@@ -277,11 +280,11 @@ const isAv=p=>p.v.some(v=>v.a);
 const multi=p=>new Set(p.v.map(v=>v.p)).size>1;
 const newest=()=>{const d=[...P].map(p=>p.new).sort().reverse();return d[Math.min(15,d.length-1)]};
 let NEWCUT='';
-const IMG={},TH={};const src=k=>k?(IMG[k]||TH[k]||TH[k.replace(/_\d\.jpg$/,'_0.jpg')]||''):'';
+const IMG={},TH={};const src=k=>k?(LIMG[k]||IMG[k]||TH[k]||TH[k.replace(/_\d\.jpg$/,'_0.jpg')]||''):'';
 async function loadGal(){for(const f of ['g1.json','g2.json','g3.json','g4.json']){try{Object.assign(IMG,await (await fetch(f)).json());if(cur)drawP()}catch(e){}}drawGrid()}
 
-Promise.all([fetch('products.json').then(r=>r.json()),fetch('thumbs.json').then(r=>r.json()),fetch('lamps.json').then(r=>r.json()).catch(()=>({items:[],cols:[]}))]).then(([d,th,lm])=>{LM=lm;Object.assign(TH,th);setTimeout(loadGal,300);P=d;NEWCUT=newest();cart=store.get('fl_cart',[]).filter(c=>P.find(p=>p.id===c.pid));lang=store.get('fl_lang','de');if(!T[lang])lang='de';
- const h=location.hash.slice(1);if(ORDER.includes(h))cat=h;if(h==='lampen')MODE='lampen';init();});
+Promise.all([fetch('products.json').then(r=>r.json()),fetch('thumbs.json').then(r=>r.json()),fetch('lamps.json').then(r=>r.json()).catch(()=>({items:[],cols:[]}))]).then(([d,th,lm])=>{LM=lm;Object.assign(TH,th);setTimeout(loadGal,300);P=d.concat(lampProducts(lm));NEWCUT=newest();setTimeout(loadLimg,600);cart=store.get('fl_cart',[]).filter(c=>P.find(p=>p.id===c.pid));lang=store.get('fl_lang','de');if(!T[lang])lang='de';
+ const h=location.hash.slice(1);if(ORDER.includes(h))cat=h;init();});
 
 function init(){
  document.querySelectorAll('.langs button').forEach(b=>b.onclick=()=>{lang=b.dataset.l;store.set('fl_lang',lang);render()});
@@ -291,19 +294,20 @@ function init(){
  $('more').onclick=()=>{shown+=24;drawGrid()};
  const pick=['keramik','teppich','sitz','schmuck','kissen','antik'].map(c=>P.find(p=>p.cat===c&&isAv(p)&&p.i.length)).filter(Boolean);
  $('mosaic').innerHTML=pick.map(p=>`<img src="${src(p.i[0])}" alt="">`).join('');
- window.onhashchange=()=>{const h=location.hash.slice(1);if(h==='lampen'){MODE='lampen'}else{MODE='shop';cat=ORDER.includes(h)?h:'all'}shown=24;render()};
+ window.onhashchange=()=>{const h=location.hash.slice(1);cat=ORDER.includes(h)?h:'all';shown=24;render()};
  $('ltype').onchange=e=>{ltype=e.target.value;lshown=40;drawLamps()};$('lmore').onclick=()=>{lshown+=40;drawLamps()};
  document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeP();closeCart()}});
  render();
 }
 function render(){
+ P.forEach(p=>{if(p.nl){p.n=p.nl[lang];p.s=p.sl[lang];p.d=p.dl[lang]}});
  applyMode();
  document.documentElement.lang=lang;
  document.querySelectorAll('[data-t]').forEach(el=>el.textContent=t(el.dataset.t));
  document.querySelectorAll('[data-ph]').forEach(el=>el.placeholder=t(el.dataset.ph));
  document.querySelectorAll('.langs button').forEach(b=>b.classList.toggle('on',b.dataset.l===lang));
  $('sort').innerHTML=['feat','new','low','high','az'].map(s=>`<option value="${s}" ${s===sort?'selected':''}>${t('s_'+s)}</option>`).join('');
- $('cats').innerHTML=ORDER.filter(c=>c!=='deko').map(c=>{const ps=P.filter(p=>p.cat===c);const im=(ps.find(p=>isAv(p))||ps[0]).i[0];return `<button class="cat" onclick="go('${c}')"><img src="${src(im)}" alt=""><span>${esc(T[lang].c[c])}<em>${ps.length} ${t('items')}</em></span></button>`}).join('');
+ $('cats').innerHTML=ORDER.filter(c=>c!=='deko'&&c!=='antik').map(c=>{const ps=P.filter(p=>p.cat===c);const im=(ps.find(p=>isAv(p))||ps[0]).i[0];return `<button class="cat" onclick="go('${c}')"><img src="${src(im)}" alt=""><span>${esc(T[lang].c[c])}<em>${ps.length} ${t('items')}</em></span></button>`}).join('');
  $('fcats').innerHTML=ORDER.map(c=>`<p><a href="#${c}" style="text-decoration:none">${esc(T[lang].c[c])}</a></p>`).join('');
  drawChips();drawGrid();drawCart();if(cur)drawP();
 }
@@ -315,8 +319,8 @@ function drawChips(){
 function go(c,stay){cat=c;shown=24;try{history.replaceState(null,'',c==='all'?location.pathname:'#'+c)}catch(e){}drawChips();drawGrid();if(!stay)$('shop').scrollIntoView({behavior:'smooth'})}
 function home(){q='';$('q').value='';go('all',1);window.scrollTo({top:0,behavior:'smooth'})}
 function list(){
- let L=P.filter(p=>(cat==='all'||p.cat===cat)&&(!avail||isAv(p)));
- if(q){const w=q.split(/\s+/);L=L.filter(p=>{const s=(p.n+' '+p.s+' '+T.de.c[p.cat]+' '+T.tr.c[p.cat]+' '+T.en.c[p.cat]).toLowerCase();return w.every(x=>s.includes(x))})}
+ let L=P.filter(p=>(cat==='all'||p.cat===cat)&&(!avail||isAv(p))&&(cat!=='lampen'||lcol==='all'||p.col===lcol));
+ if(q){const w=q.split(/\s+/);L=L.filter(p=>{const s=(p.n+' '+p.s+' '+(p.nl?p.nl.de+' '+p.nl.tr+' '+p.nl.en:'')+' '+T.de.c[p.cat]+' '+T.tr.c[p.cat]+' '+T.en.c[p.cat]).toLowerCase();return w.every(x=>s.includes(x))})}
  const f={feat:(a,b)=>(isAv(b)-isAv(a))||(b.i.length-a.i.length)||ORDER.indexOf(a.cat)-ORDER.indexOf(b.cat),new:(a,b)=>b.new.localeCompare(a.new),low:(a,b)=>minP(a)-minP(b),high:(a,b)=>minP(b)-minP(a),az:(a,b)=>a.n.localeCompare(b.n,'de')};
  if(sort!=='feat'||cat!=='all')return L.sort(f[sort]);
  L.sort(f.feat);const g={};L.forEach(p=>(g[p.cat]=g[p.cat]||[]).push(p));const out=[];let k=0;
@@ -325,19 +329,30 @@ function list(){
 }
 function drawGrid(){
  drawChips();
+ if(cat==='lampen'&&LM.cols){const cnt=k=>P.filter(p=>p.lamp&&(k==='all'||p.col===k)).length;$('subchips').style.display='flex';
+  $('subchips').innerHTML=[{key:'all'},...LM.cols].map(c=>`<button class="chip ${lcol===c.key?'on':''}" style="font-size:12.5px;padding:5px 11px" onclick="lcol='${c.key}';shown=24;drawGrid()">${esc(c.key==='all'?t('allCol'):c[lang])}<b>${cnt(c.key)}</b></button>`).join('')}else{$('subchips').style.display='none'}
+ $('tabShop')&&($('tabShop').classList.toggle('on',cat!=='lampen'),$('tabLamp').classList.toggle('on',cat==='lampen'));
  const L=list();
  $('grid').innerHTML=L.length?L.slice(0,shown).map(p=>{const av=isAv(p);const v0=p.v.find(v=>v.a)||p.v[0];
-  return `<div class="card ${av?'':'so'}" onclick="openP(${p.id})"><div class="ph">${p.i[0]?`<img src="${src(p.i[0])}" alt="${esc(p.n)}">`:''}${p.i[1]&&av&&IMG[p.i[1]]?`<img class="b" src="${IMG[p.i[1]]}" alt="">`:''}${!av?`<span class="badge">${t('sold')}</span>`:p.new>=NEWCUT?`<span class="badge new">${t('neu')}</span>`:''}</div>
+  return `<div class="card ${av?'':'so'} ${p.lamp?'lamp':''}" onclick="openP(${p.id})"><div class="ph">${p.i[0]?`<img src="${src(p.i[0])}" alt="${esc(p.n)}">`:''}${p.i[1]&&av&&IMG[p.i[1]]?`<img class="b" src="${IMG[p.i[1]]}" alt="">`:''}${!av?`<span class="badge">${t('sold')}</span>`:p.new>=NEWCUT?`<span class="badge new">${t('neu')}</span>`:''}</div>
   <div class="bd"><div class="ct">${esc(T[lang].c[p.cat])}</div><div class="nm">${esc(p.n)}</div><div class="pr">${multi(p)?`<small>${t('from')} </small>`:''}${eur(minP(p))}${v0.c&&v0.c>v0.p?`<s>${eur(v0.c)}</s>`:''}</div></div></div>`}).join(''):`<div class="empty">${t('noRes')}</div>`;
  $('more').style.display=L.length>shown?'block':'none';
 }
-let LIMG={},limgLoading=false;async function loadLimg(){if(limgLoading)return;limgLoading=true;for(const f of ['limg1.json','limg2.json','limg3.json','limg4.json']){try{Object.assign(LIMG,await (await fetch(f)).json());if(MODE==='lampen')drawLamps();applyBanner()}catch(e){}}}
+function lampProducts(lm){const C={};(lm.cols||[]).forEach(c=>C[c.key]=c);const TX={};
+ return (lm.items||[]).map((i,k)=>{const c=C[i.col]||{de:i.col,tr:i.col,en:i.col};
+  const nl={de:`${i.t[0]} ${c.de} · ${i.nr}`,tr:`${c.tr} ${i.t[1]} · ${i.nr}`,en:`${c.en} ${i.t[2]} · ${i.nr}`};
+  const sl={de:`Breite ${i.w} · Höhe ${i.h} · ${i.kg} kg`,tr:`Genişlik ${i.w} · Yükseklik ${i.h} · ${i.kg} kg`,en:`Width ${i.w} · Height ${i.h} · ${i.kg} kg`};
+  const dl={de:[`Handgefertigte orientalische Lampe aus der Kollektion ${c.de}.`,`Maße: Breite ${i.w}, Höhe ${i.h} (ohne Kette), Gewicht ${i.kg} kg.`,'Messing, Glas und Handarbeit aus Anatolien. Jedes Stück kann leicht vom Foto abweichen.','Bestellung direkt bei Farbenland – Lieferzeit und Versand auf Anfrage. Gern auch im Laden in Köln-Mülheim ansehen.'],
+   tr:[`${c.tr} koleksiyonundan el yapımı oryantal lamba.`,`Ölçüler: Genişlik ${i.w}, Yükseklik ${i.h} (zincir hariç), Ağırlık ${i.kg} kg.`,'Anadolu’dan pirinç, cam ve el işçiliği. Her parça fotoğraftan biraz farklı olabilir.','Sipariş doğrudan Farbenland’den – teslim süresi ve kargo için bize sorun. Köln-Mülheim’deki mağazamızda da görebilirsiniz.'],
+   en:[`Handmade oriental lamp from the ${c.en} collection.`,`Size: width ${i.w}, height ${i.h} (without chain), weight ${i.kg} kg.`,'Brass, glass and handwork from Anatolia. Each piece may differ slightly from the photo.','Ordered directly from Farbenland – delivery time and shipping on request. You are welcome to see it in our store in Cologne-Mülheim.']};
+  return {id:9000000000+k,lamp:1,col:i.col,nr:i.nr,h:i.nr,n:nl.de,nl,s:sl.de,sl,d:dl.de,dl,cat:'lampen',opt:'',v:[{id:8000000000+k,t:'',p:i.p,c:null,a:true}],i:[i.img],new:'2026-01-01'}})}
+let LIMG={},limgLoading=false;async function loadLimg(){if(limgLoading)return;limgLoading=true;for(const f of ['limg1.json','limg2.json','limg3.json','limg4.json']){try{Object.assign(LIMG,await (await fetch(f)).json());render();applyBanner()}catch(e){}}}
 const li=k=>LIMG[k]||'data:image/gif;base64,R0lGODlhAQABAIAAACoGCQAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==';
 function applyBanner(){if(LM.items.length&&!$('lbimgs').dataset.ok){const pick=['MO','SE','AN','KP'].map(c=>LM.items.find(i=>i.col===c)).filter(Boolean);if(pick.every(i=>LIMG[i.img])){$('lbimgs').innerHTML=pick.map(i=>`<img src="${LIMG[i.img]}" alt="">`).join('');$('lbimgs').dataset.ok=1}}}
 let LM={items:[],cols:[]},MODE='shop',lcol='all',ltype='all',lshown=40;
-function mode(m){MODE=m;try{history.replaceState(null,'',m==='lampen'?'#lampen':location.pathname)}catch(e){}render();window.scrollTo({top:m==='lampen'?document.querySelector('.hero').offsetHeight:0,behavior:'smooth'})}
-function applyMode(){const L=MODE==='lampen';$('lampen').style.display=L?'block':'none';$('shop').style.display=L?'none':'block';$('cats').style.display=L?'none':'grid';$('lbanner').style.display=L||!LM.items.length?'none':'grid';
- $('tabShop').classList.toggle('on',!L);$('tabLamp').classList.toggle('on',L);
+function mode(m){MODE='shop';if(m==='lampen'){lcol='all';go('lampen')}else{go('all')}}
+function applyMode(){MODE='shop';const L=false;$('lampen').style.display=L?'block':'none';$('shop').style.display=L?'none':'block';$('cats').style.display=L?'none':'grid';$('lbanner').style.display=L||!LM.items.length?'none':'grid';
+ $('tabShop').classList.toggle('on',cat!=='lampen');$('tabLamp').classList.toggle('on',cat==='lampen');
  if(LM.items.length){setTimeout(loadLimg,L?0:1500);applyBanner()}
  if(L)drawLamps()}
 const lcn=k=>{const c=LM.cols.find(x=>x.key===k);return c?c[lang]:k};
@@ -368,7 +383,7 @@ function openP(id){cur=P.find(p=>p.id===id);const fa=cur.v.findIndex(v=>v.a);cur
 function closeP(){cur=null;$('ov').classList.remove('on');document.body.style.overflow=''}
 function drawP(){const p=cur,v=p.v[curV];
  $('modal').innerHTML=`<button class="x" onclick="closeP()">×</button>
- <div class="gal"><img class="main" src="${src(p.i[curI])}" alt="${esc(p.n)}"><div class="thumbs">${p.i.map((s,k)=>`<img src="${src(s)}" class="${k===curI?'on':''}" onclick="curI=${k};drawP()">`).join('')}</div></div>
+ <div class="gal ${p.lamp?'lamp':''}"><img class="main" src="${src(p.i[curI])}" alt="${esc(p.n)}"><div class="thumbs">${p.i.map((s,k)=>`<img src="${src(s)}" class="${k===curI?'on':''}" onclick="curI=${k};drawP()">`).join('')}</div></div>
  <div class="det"><span style="font-size:11.5px;text-transform:uppercase;letter-spacing:1.2px;color:var(--turq);font-weight:600">${esc(T[lang].c[p.cat])}</span>
  <h2>${esc(p.n)}</h2>${p.s?`<p class="sub">${esc(p.s)}</p>`:''}
  <div class="price">${eur(v.p)}${v.c&&v.c>v.p?` <s style="font-size:16px;color:var(--mut);font-weight:400">${eur(v.c)}</s>`:''}</div><div class="tax">${t('tax')}</div>
@@ -383,10 +398,14 @@ function save(){store.set('fl_cart',cart);drawCart()}
 function lines(){return cart.map(c=>{const p=P.find(x=>x.id===c.pid);const v=p&&p.v.find(x=>x.id===c.vid);return p&&v?{c,p,v}:null}).filter(Boolean)}
 function drawCart(){const L=lines();const n=L.reduce((a,x)=>a+x.c.q,0),sum=L.reduce((a,x)=>a+x.c.q*x.v.p,0);$('cc').textContent=n;
  $('items').innerHTML=L.length?L.map(({c,p,v})=>`<div class="it"><img src="${src(p.i[v.im??0]||p.i[0])}" alt=""><div><div class="n">${esc(p.n)}</div>${v.t?`<div class="v">${esc(v.t)}</div>`:''}<div class="q"><button onclick="chg(${c.vid},-1)">−</button>${c.q}<button onclick="chg(${c.vid},1)">+</button> <button class="rm" onclick="chg(${c.vid},-999)">${t('remove')}</button></div></div><div class="p">${eur(v.p*c.q)}</div></div>`).join(''):`<div class="empty">${t('empty')}</div>`;
- const link=SHOP+'/cart/'+L.map(x=>x.v.id+':'+x.c.q).join(',');
+ const SL=L.filter(x=>!x.p.lamp),LL=L.filter(x=>x.p.lamp);
+ const link=SHOP+'/cart/'+SL.map(x=>x.v.id+':'+x.c.q).join(',');
+ const body=encodeURIComponent('Bestellung Lampen / Lamba siparişi:\n\n'+LL.map(x=>`${x.c.q} x ${x.p.nr} (${eur(x.v.p)})`).join('\n')+'\n\nSumme: '+eur(LL.reduce((a,x)=>a+x.c.q*x.v.p,0))+'\n\nName:\nAdresse:\nTelefon:\n');
+ const mail=`mailto:farben-land@web.de?subject=${encodeURIComponent('Lampen-Bestellung Farbenland')}&body=${body}`;
  $('sum').innerHTML=L.length?`<div class="row tot"><span>${t('sub')}</span><span>${eur(sum)}</span></div>
  <div class="ship">${sum>=FREE?t('shipFree'):t('shipLeft').replace('{x}',eur(FREE-sum))}<div class="bar"><i style="width:${Math.min(100,sum/FREE*100)}%"></i></div></div>
- <a class="checkout" href="${link}" target="_blank" rel="noopener">${t('checkout')} →</a><div class="pay">${t('pay')}</div>`:'';
+ ${SL.length?`<a class="checkout" href="${link}" target="_blank" rel="noopener">${t('checkout')} →</a><div class="pay">${t('pay')}</div>`:''}
+ ${LL.length?`<a class="checkout" style="background:var(--teal);margin-top:10px" href="${mail}">${t('lampOrder')} →</a><div class="pay">${t('lampNote')}<br>farben-land@web.de</div>`:''}`:'';
 }
 function chg(vid,d){const c=cart.find(x=>x.vid===vid);if(!c)return;c.q+=d;if(c.q<1)cart=cart.filter(x=>x!==c);save()}
 function openCart(){$('drawer').classList.add('on');$('cov').classList.add('on')}
