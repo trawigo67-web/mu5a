@@ -287,7 +287,7 @@ let NEWCUT='';
 const IMG={},TH={};const src=k=>k?(LIMG[k]||IMG[k]||TH[k]||TH[k.replace(/_\d\.jpg$/,'_0.jpg')]||''):'';
 async function loadGal(){for(const f of ['g1.json','g2.json','g3.json','g4.json']){try{Object.assign(IMG,await (await fetch(f)).json());if(cur)drawP()}catch(e){}}drawGrid()}
 
-Promise.all([fetch('products.json').then(r=>r.json()),fetch('thumbs.json').then(r=>r.json()),fetch('lamps.json').then(r=>r.json()).catch(()=>({items:[],cols:[]}))]).then(([d,th,lm])=>{LM=lm;Object.assign(TH,th);setTimeout(loadGal,300);P=lampProducts(lm);NEWCUT=newest();setTimeout(loadLimg,600);cart=store.get('fl_cart',[]).filter(c=>P.find(p=>p.id===c.pid));lang=store.get('fl_lang','de');if(!T[lang])lang='de';
+Promise.all([fetch('products.json').then(r=>r.json()),fetch('thumbs.json').then(r=>r.json()),fetch('lamps.json').then(r=>r.json()).catch(()=>({items:[],cols:[]}))]).then(([d,th,lm])=>{LM=lm;Object.assign(TH,th);setTimeout(loadGal,300);P=lampProducts(lm);NEWCUT='9999';setTimeout(loadLimg,600);cart=store.get('fl_cart',[]).filter(c=>P.find(p=>p.id===c.pid));lang=store.get('fl_lang','de');if(!T[lang])lang='de';
  const h=location.hash.slice(1);if(ORDER.includes(h))cat=h;init();});
 
 function init(){
@@ -349,7 +349,7 @@ function lampProducts(lm){const C={};(lm.cols||[]).forEach(c=>C[c.key]=c);const 
   const dl={de:[`Handgefertigte orientalische Lampe aus der Kollektion ${c.de}.`,`Maße: Breite ${i.w}, Höhe ${i.h} (ohne Kette), Gewicht ${i.kg} kg.`,'Messing, Glas und Handarbeit aus Anatolien. Jedes Stück kann leicht vom Foto abweichen.','Bestellung direkt bei Farbenland – Lieferzeit und Versand auf Anfrage. Gern auch im Laden in Köln-Mülheim ansehen.'],
    tr:[`${c.tr} koleksiyonundan el yapımı oryantal lamba.`,`Ölçüler: Genişlik ${i.w}, Yükseklik ${i.h} (zincir hariç), Ağırlık ${i.kg} kg.`,'Anadolu’dan pirinç, cam ve el işçiliği. Her parça fotoğraftan biraz farklı olabilir.','Sipariş doğrudan Farbenland’den – teslim süresi ve kargo için bize sorun. Köln-Mülheim’deki mağazamızda da görebilirsiniz.'],
    en:[`Handmade oriental lamp from the ${c.en} collection.`,`Size: width ${i.w}, height ${i.h} (without chain), weight ${i.kg} kg.`,'Brass, glass and handwork from Anatolia. Each piece may differ slightly from the photo.','Ordered directly from Farbenland – delivery time and shipping on request. You are welcome to see it in our store in Cologne-Mülheim.']};
-  return {id:9000000000+k,lamp:1,col:i.col,nr:i.nr,h:i.nr,n:nl.de,nl,s:sl.de,sl,d:dl.de,dl,cat:'lampen',opt:'',v:[{id:8000000000+k,t:'',p:i.p,c:null,a:true}],i:[i.img],new:'2026-01-01'}})}
+  return {id:9000000000+k,lamp:1,col:i.col,nr:i.nr,h:i.nr,n:nl.de,nl,s:sl.de,sl,d:dl.de,dl,cat:'lampen',opt:'',v:[{id:8000000000+k,t:'',p:i.p,c:null,a:true}],i:[i.img],new:'2000-01-01'}})}
 let LIMG={},limgLoading=false;async function loadLimg(){if(limgLoading)return;limgLoading=true;for(const f of ['limg1.json','limg2.json','limg3.json','limg4.json']){try{Object.assign(LIMG,await (await fetch(f)).json());render();applyBanner()}catch(e){}}}
 const li=k=>LIMG[k]||'data:image/gif;base64,R0lGODlhAQABAIAAACoGCQAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==';
 function applyBanner(){if(LM.items.length&&!$('lbimgs').dataset.ok){const pick=['MO','SE','AN','KP'].map(c=>LM.items.find(i=>i.col===c)).filter(Boolean);if(pick.every(i=>LIMG[i.img])){$('lbimgs').innerHTML=pick.map(i=>`<img src="${LIMG[i.img]}" alt="">`).join('');$('lbimgs').dataset.ok=1}}}
