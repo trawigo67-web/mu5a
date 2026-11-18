@@ -171,6 +171,7 @@ footer p{margin:4px 0}
 .logo{flex-direction:row!important;align-items:center;gap:10px}.logo img{height:52px;width:52px}.logo .lt{display:flex;flex-direction:column}
 .heroLogo{width:min(440px,90%);justify-self:center;filter:drop-shadow(0 0 40px rgba(217,164,65,.35))}
 .btn{background:var(--gold)}.hero .btn.ghost{border-color:rgba(217,164,65,.6);color:#f0d79a}
+#chips{display:none!important}
 </style>
 </head>
 <body>
@@ -238,8 +239,8 @@ footer p{margin:4px 0}
 const SHOP='https://orientkervan.com';
 const FREE=75;
 const T={
-de:{usp1:'Gratis Versand ab 75 €',usp2:'Ratenzahlung mit Klarna & PayPal',usp3:'Laden in Köln-Mülheim',cart:'Warenkorb',search:'Lampen, Kelims, Keramik suchen …',
-heroT:'Handgefertigte Unikate aus dem Orient',heroP:'Kütahya-Keramik, echte Uşak-Kelims, Şark-Köşesi-Sitzecken, Schmuck und antike Schätze – ausgesucht in Anatolien, erhältlich in Köln.',
+de:{usp1:'Gratis Versand ab 75 €',usp2:'Ratenzahlung mit Klarna & PayPal',usp3:'Laden in Köln-Mülheim',cart:'Warenkorb',search:'Lampe oder Nummer suchen …',
+heroT:'Orientalische Lampen aus Anatolien',heroP:'Über 550 handgefertigte Hänge-, Wand-, Steh- und Tischleuchten in 13 Kollektionen – aus Messing, Glas und Mosaik. Erhältlich in Köln.',
 shopAll:'Jetzt entdecken',visit:'Laden besuchen',onlyAvail:'Nur verfügbare',more:'Mehr anzeigen',all:'Alle Produkte',
 s_feat:'Empfohlen',s_new:'Neueste zuerst',s_low:'Preis aufsteigend',s_high:'Preis absteigend',s_az:'Name A–Z',
 from:'ab',sold:'Ausverkauft',neu:'Neu',add:'In den Warenkorb',soldBtn:'Leider ausverkauft',tax:'inkl. MwSt., zzgl. Versand',choose:'Ausführung',
@@ -249,8 +250,8 @@ i1t:'Echte Handarbeit',i1p:'Jedes Stück ist handgemacht – viele sind Unikate,
 foot:'Orientalische Wohnkultur, Mosaiklampen, Kelims und Keramik – direkt aus Anatolien nach Köln.',shop:'Shop',contact:'Kontakt',descNote:'',
 tShop:'Shop',tLamp:'Lampen-Katalog',lampCta:'Lampen-Katalog ansehen',lbT:'Orientalische Lampen',lbP:'Über 550 handgefertigte Lampen in 13 Kollektionen – Hänge-, Wand-, Steh- und Tischleuchten. Im Laden ansehen oder anfragen.',pdf:'Katalog als PDF',allCol:'Alle Kollektionen',allType:'Alle Arten',ask:'Preis auf Anfrage',askTxt:'Diese Lampe bekommst du bei uns im Laden oder auf Bestellung. Frag uns nach Preis und Lieferzeit:',wid:'Breite',hei:'Höhe',wei:'Gewicht',lamps:'Lampen',col:'Kollektion',
 lampOrder:'Lampen per E-Mail bestellen',lampNote:'Lampen bestellst du direkt bei uns – wir melden uns mit Lieferzeit und Versand.',allCol:'Alle Kollektionen',c:{lampen:'Orientalische Lampen',keramik:'Keramik & Wandkunst',teppich:'Teppiche & Kelims',sitz:'Şark Köşesi & Sitzecken',kissen:'Kissen & Textilien',schmuck:'Schmuck & Tesbih',antik:'Antiquitäten & Unikate',deko:'Taschen & Deko'}},
-tr:{usp1:'75 € üzeri ücretsiz kargo',usp2:'Klarna & PayPal ile taksit',usp3:'Köln-Mülheim’de mağaza',cart:'Sepet',search:'Lamba, kilim, seramik ara …',
-heroT:'Doğu’dan el yapımı eşsiz parçalar',heroP:'Kütahya çinisi, hakiki Uşak kilimleri, Şark Köşesi takımları, takı ve antika hazineler – Anadolu’dan seçildi, Köln’de sizi bekliyor.',
+tr:{usp1:'75 € üzeri ücretsiz kargo',usp2:'Klarna & PayPal ile taksit',usp3:'Köln-Mülheim’de mağaza',cart:'Sepet',search:'Lamba veya numara ara …',
+heroT:'Anadolu’dan oryantal lambalar',heroP:'13 koleksiyonda 550’den fazla el yapımı sarkıt, aplik, lambader ve masa lambası – pirinç, cam ve mozaik. Köln’de sizi bekliyor.',
 shopAll:'Keşfet',visit:'Mağazayı ziyaret et',onlyAvail:'Sadece stoktakiler',more:'Daha fazla göster',all:'Tüm ürünler',
 s_feat:'Önerilen',s_new:'En yeniler',s_low:'Fiyat artan',s_high:'Fiyat azalan',s_az:'İsim A–Z',
 from:'başlangıç',sold:'Tükendi',neu:'Yeni',add:'Sepete ekle',soldBtn:'Maalesef tükendi',tax:'KDV dahil, kargo hariç',choose:'Seçenek',
@@ -260,8 +261,8 @@ i1t:'Gerçek el işçiliği',i1p:'Her parça el yapımı – çoğu tek ve eşsi
 foot:'Doğu ev kültürü, mozaik lambalar, kilimler ve çini – Anadolu’dan doğrudan Köln’e.',shop:'Mağaza',contact:'İletişim',descNote:'Ürün açıklaması Almancadır.',
 tShop:'Mağaza',tLamp:'Lamba Kataloğu',lampCta:'Lamba kataloğunu gör',lbT:'Oryantal Lambalar',lbP:'13 koleksiyonda 550’den fazla el yapımı lamba – sarkıt, aplik, lambader ve masa lambası. Mağazada görün veya sorun.',pdf:'PDF katalog',allCol:'Tüm koleksiyonlar',allType:'Tüm türler',ask:'Fiyat için sorunuz',askTxt:'Bu lambayı mağazamızda veya sipariş üzerine bulabilirsiniz. Fiyat ve teslim süresi için bize yazın:',wid:'Genişlik',hei:'Yükseklik',wei:'Ağırlık',lamps:'lamba',col:'Koleksiyon',
 lampOrder:'Lambaları e-posta ile sipariş et',lampNote:'Lambaları doğrudan bizden sipariş edersiniz – teslim süresi ve kargo için size dönüş yaparız.',allCol:'Tüm koleksiyonlar',c:{lampen:'Oryantal Lambalar',keramik:'Çini & Duvar Sanatı',teppich:'Halı & Kilim',sitz:'Şark Köşesi & Oturma Grupları',kissen:'Yastık & Tekstil',schmuck:'Takı & Tesbih',antik:'Antika & Tek Parçalar',deko:'Çanta & Dekor'}},
-en:{usp1:'Free shipping from €75',usp2:'Pay later with Klarna & PayPal',usp3:'Store in Cologne-Mülheim',cart:'Cart',search:'Search lamps, kilims, ceramics …',
-heroT:'Handmade one-of-a-kind pieces from the Orient',heroP:'Kütahya ceramics, genuine Uşak kilims, Şark Köşesi seating, jewellery and antique treasures – chosen in Anatolia, available in Cologne.',
+en:{usp1:'Free shipping from €75',usp2:'Pay later with Klarna & PayPal',usp3:'Store in Cologne-Mülheim',cart:'Cart',search:'Search lamp or number …',
+heroT:'Oriental lamps from Anatolia',heroP:'More than 550 handmade pendant, wall, floor and table lamps in 13 collections – brass, glass and mosaic. Available in Cologne.',
 shopAll:'Shop now',visit:'Visit the store',onlyAvail:'In stock only',more:'Show more',all:'All products',
 s_feat:'Featured',s_new:'Newest first',s_low:'Price: low to high',s_high:'Price: high to low',s_az:'Name A–Z',
 from:'from',sold:'Sold out',neu:'New',add:'Add to cart',soldBtn:'Sold out',tax:'incl. VAT, plus shipping',choose:'Option',
@@ -271,8 +272,8 @@ i1t:'Genuine handwork',i1p:'Every piece is handmade – many are unique and exis
 foot:'Oriental living, mosaic lamps, kilims and ceramics – straight from Anatolia to Cologne.',shop:'Shop',contact:'Contact',descNote:'Product description is in German.',
 tShop:'Shop',tLamp:'Lamp catalogue',lampCta:'View lamp catalogue',lbT:'Oriental lamps',lbP:'More than 550 handmade lamps in 13 collections – pendant, wall, floor and table lamps. See them in our store or ask us.',pdf:'Catalogue as PDF',allCol:'All collections',allType:'All types',ask:'Price on request',askTxt:'Available in our store or to order. Ask us for price and delivery time:',wid:'Width',hei:'Height',wei:'Weight',lamps:'lamps',col:'Collection',
 lampOrder:'Order lamps by e-mail',lampNote:'Lamps are ordered directly from us – we will get back to you with delivery time and shipping.',allCol:'All collections',c:{lampen:'Oriental Lamps',keramik:'Ceramics & Wall Art',teppich:'Rugs & Kilims',sitz:'Şark Köşesi & Seating',kissen:'Cushions & Textiles',schmuck:'Jewellery & Prayer Beads',antik:'Antiques & One-offs',deko:'Bags & Décor'}}};
-const ORDER=['lampen','keramik','teppich','sitz','kissen','schmuck','antik','deko'];
-let P=[],lang='de',cat='all',q='',sort='feat',avail=true,shown=24,cur=null,curV=0,curQ=1,curI=0,cart=[];
+const ORDER=['lampen'];
+let P=[],lang='de',cat='lampen',q='',sort='feat',avail=true,shown=24,cur=null,curV=0,curQ=1,curI=0,cart=[];
 const $=id=>document.getElementById(id);
 const store={get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
 const eur=n=>new Intl.NumberFormat(lang==='en'?'en-IE':lang==='tr'?'tr-TR':'de-DE',{style:'currency',currency:'EUR'}).format(n);
@@ -286,7 +287,7 @@ let NEWCUT='';
 const IMG={},TH={};const src=k=>k?(LIMG[k]||IMG[k]||TH[k]||TH[k.replace(/_\d\.jpg$/,'_0.jpg')]||''):'';
 async function loadGal(){for(const f of ['g1.json','g2.json','g3.json','g4.json']){try{Object.assign(IMG,await (await fetch(f)).json());if(cur)drawP()}catch(e){}}drawGrid()}
 
-Promise.all([fetch('products.json').then(r=>r.json()),fetch('thumbs.json').then(r=>r.json()),fetch('lamps.json').then(r=>r.json()).catch(()=>({items:[],cols:[]}))]).then(([d,th,lm])=>{LM=lm;Object.assign(TH,th);setTimeout(loadGal,300);P=d.concat(lampProducts(lm));NEWCUT=newest();setTimeout(loadLimg,600);cart=store.get('fl_cart',[]).filter(c=>P.find(p=>p.id===c.pid));lang=store.get('fl_lang','de');if(!T[lang])lang='de';
+Promise.all([fetch('products.json').then(r=>r.json()),fetch('thumbs.json').then(r=>r.json()),fetch('lamps.json').then(r=>r.json()).catch(()=>({items:[],cols:[]}))]).then(([d,th,lm])=>{LM=lm;Object.assign(TH,th);setTimeout(loadGal,300);P=lampProducts(lm);NEWCUT=newest();setTimeout(loadLimg,600);cart=store.get('fl_cart',[]).filter(c=>P.find(p=>p.id===c.pid));lang=store.get('fl_lang','de');if(!T[lang])lang='de';
  const h=location.hash.slice(1);if(ORDER.includes(h))cat=h;init();});
 
 function init(){
@@ -354,7 +355,7 @@ const li=k=>LIMG[k]||'data:image/gif;base64,R0lGODlhAQABAIAAACoGCQAAACH5BAAAAAAA
 function applyBanner(){if(LM.items.length&&!$('lbimgs').dataset.ok){const pick=['MO','SE','AN','KP'].map(c=>LM.items.find(i=>i.col===c)).filter(Boolean);if(pick.every(i=>LIMG[i.img])){$('lbimgs').innerHTML=pick.map(i=>`<img src="${LIMG[i.img]}" alt="">`).join('');$('lbimgs').dataset.ok=1}}}
 let LM={items:[],cols:[]},MODE='shop',lcol='all',ltype='all',lshown=40;
 function mode(m){MODE='shop';if(m==='lampen'){lcol='all';go('lampen')}else{go('all')}}
-function applyMode(){MODE='shop';const L=false;$('lampen').style.display='none';$('shop').style.display=L?'none':'block';$('cats').style.display=L?'none':'grid';$('lbanner').style.display='none';
+function applyMode(){MODE='shop';const L=false;$('lampen').style.display='none';$('shop').style.display=L?'none':'block';$('cats').style.display='none';$('lbanner').style.display='none';
  $('tabShop').classList.toggle('on',cat!=='lampen');$('tabLamp').classList.toggle('on',cat==='lampen');
  if(LM.items.length){setTimeout(loadLimg,L?0:1500);applyBanner()}
  if(L)drawLamps()}
