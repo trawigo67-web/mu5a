@@ -177,7 +177,7 @@ footer p{margin:4px 0}
 <div class="topbar"><div class="wrap"><span data-t="usp1"></span><span data-t="usp2"></span><span data-t="usp3"></span></div></div>
 <header><div class="wrap">
  <a class="logo" onclick="home()"><img src="logo_s.png" alt="Orient Kervan Farbenland"><span class="lt"><b>Orient Kervan</b><small>Farbenland · Köln</small></span></a>
- <div class="tabs"><button id="tabShop" onclick="mode('shop')" data-t="tShop"></button><button id="tabLamp" onclick="mode('lampen')" data-t="tLamp"></button></div>
+ <div class="tabs" style="display:none"><button id="tabShop" onclick="mode('shop')" data-t="tShop"></button><button id="tabLamp" onclick="mode('lampen')" data-t="tLamp"></button></div>
  <div class="search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" data-ph="search" autocomplete="off"></div>
  <div class="langs"><button data-l="de" title="Deutsch">🇩🇪</button><button data-l="tr" title="Türkçe">🇹🇷</button><button data-l="en" title="English">🇬🇧</button></div>
  <button class="cartbtn" onclick="openCart()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><span data-t="cart"></span><i id="cc">0</i></button>
@@ -187,13 +187,13 @@ footer p{margin:4px 0}
  <svg class="pat" width="100%" height="100%"><defs><pattern id="p" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M30 0 60 30 30 60 0 30Z M30 12 48 30 30 48 12 30Z" fill="none" stroke="#fff" stroke-width="1.2"/><circle cx="30" cy="30" r="4" fill="#fff"/></pattern></defs><rect width="100%" height="100%" fill="url(#p)"/></svg>
  <div class="wrap">
   <div><h1 data-t="heroT"></h1><p data-t="heroP"></p>
-   <div class="cta"><button class="btn" onclick="go('all')" data-t="shopAll"></button><button class="btn" style="background:#fff;color:var(--teal)" onclick="mode('lampen')" data-t="lampCta"></button><button class="btn ghost" onclick="document.getElementById('visit').scrollIntoView({behavior:'smooth'})" data-t="visit"></button></div></div>
+   <div class="cta"><button class="btn" onclick="go('all')" data-t="shopAll"></button><button class="btn ghost" onclick="document.getElementById('visit').scrollIntoView({behavior:'smooth'})" data-t="visit"></button></div></div>
   <img class="heroLogo" src="logo.png" alt="Orient Kervan – Farbenland"><div class="mosaic" id="mosaic" style="display:none"></div>
  </div>
 </section>
 
 <main class="wrap">
- <div class="lbanner" id="lbanner" onclick="mode('lampen')"><div><h3 class="serif" data-t="lbT"></h3><p data-t="lbP"></p><button class="btn" data-t="lampCta"></button></div><div class="imgs" id="lbimgs"></div></div>
+ <div class="lbanner" id="lbanner" style="display:none!important" onclick="mode('lampen')"><div><h3 class="serif" data-t="lbT"></h3><p data-t="lbP"></p><button class="btn" data-t="lampCta"></button></div><div class="imgs" id="lbimgs"></div></div>
  <div class="cats" id="cats"></div>
  <div id="shop">
   <div class="toolbar">
@@ -271,7 +271,7 @@ i1t:'Genuine handwork',i1p:'Every piece is handmade – many are unique and exis
 foot:'Oriental living, mosaic lamps, kilims and ceramics – straight from Anatolia to Cologne.',shop:'Shop',contact:'Contact',descNote:'Product description is in German.',
 tShop:'Shop',tLamp:'Lamp catalogue',lampCta:'View lamp catalogue',lbT:'Oriental lamps',lbP:'More than 550 handmade lamps in 13 collections – pendant, wall, floor and table lamps. See them in our store or ask us.',pdf:'Catalogue as PDF',allCol:'All collections',allType:'All types',ask:'Price on request',askTxt:'Available in our store or to order. Ask us for price and delivery time:',wid:'Width',hei:'Height',wei:'Weight',lamps:'lamps',col:'Collection',
 lampOrder:'Order lamps by e-mail',lampNote:'Lamps are ordered directly from us – we will get back to you with delivery time and shipping.',allCol:'All collections',c:{lampen:'Oriental Lamps',keramik:'Ceramics & Wall Art',teppich:'Rugs & Kilims',sitz:'Şark Köşesi & Seating',kissen:'Cushions & Textiles',schmuck:'Jewellery & Prayer Beads',antik:'Antiques & One-offs',deko:'Bags & Décor'}}};
-const ORDER=['lampen','keramik','teppich','sitz','kissen','schmuck','antik','deko'];
+const ORDER=['keramik','teppich','sitz','kissen','schmuck','antik','deko'];
 let P=[],lang='de',cat='all',q='',sort='feat',avail=true,shown=24,cur=null,curV=0,curQ=1,curI=0,cart=[];
 const $=id=>document.getElementById(id);
 const store={get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
@@ -286,7 +286,7 @@ let NEWCUT='';
 const IMG={},TH={};const src=k=>k?(LIMG[k]||IMG[k]||TH[k]||TH[k.replace(/_\d\.jpg$/,'_0.jpg')]||''):'';
 async function loadGal(){for(const f of ['g1.json','g2.json','g3.json','g4.json']){try{Object.assign(IMG,await (await fetch(f)).json());if(cur)drawP()}catch(e){}}drawGrid()}
 
-Promise.all([fetch('products.json').then(r=>r.json()),fetch('thumbs.json').then(r=>r.json()),fetch('lamps.json').then(r=>r.json()).catch(()=>({items:[],cols:[]}))]).then(([d,th,lm])=>{LM=lm;Object.assign(TH,th);setTimeout(loadGal,300);P=d.concat(lampProducts(lm));NEWCUT=newest();setTimeout(loadLimg,600);cart=store.get('fl_cart',[]).filter(c=>P.find(p=>p.id===c.pid));lang=store.get('fl_lang','de');if(!T[lang])lang='de';
+Promise.all([fetch('products.json').then(r=>r.json()),fetch('thumbs.json').then(r=>r.json()),Promise.resolve({items:[],cols:[]})]).then(([d,th,lm])=>{LM=lm;Object.assign(TH,th);setTimeout(loadGal,300);P=d;NEWCUT=newest();setTimeout(loadLimg,600);cart=store.get('fl_cart',[]).filter(c=>P.find(p=>p.id===c.pid));lang=store.get('fl_lang','de');if(!T[lang])lang='de';
  const h=location.hash.slice(1);if(ORDER.includes(h))cat=h;init();});
 
 function init(){
