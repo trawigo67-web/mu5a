@@ -354,7 +354,7 @@ const li=k=>LIMG[k]||'data:image/gif;base64,R0lGODlhAQABAIAAACoGCQAAACH5BAAAAAAA
 function applyBanner(){if(LM.items.length&&!$('lbimgs').dataset.ok){const pick=['MO','SE','AN','KP'].map(c=>LM.items.find(i=>i.col===c)).filter(Boolean);if(pick.every(i=>LIMG[i.img])){$('lbimgs').innerHTML=pick.map(i=>`<img src="${LIMG[i.img]}" alt="">`).join('');$('lbimgs').dataset.ok=1}}}
 let LM={items:[],cols:[]},MODE='shop',lcol='all',ltype='all',lshown=40;
 function mode(m){MODE='shop';if(m==='lampen'){lcol='all';go('lampen')}else{go('all')}}
-function applyMode(){MODE='shop';const L=false;$('lampen').style.display=L?'block':'none';$('shop').style.display=L?'none':'block';$('cats').style.display=L?'none':'grid';$('lbanner').style.display=L||!LM.items.length?'none':'grid';
+function applyMode(){MODE='shop';const L=false;$('lampen').style.display='none';$('shop').style.display=L?'none':'block';$('cats').style.display=L?'none':'grid';$('lbanner').style.display='none';
  $('tabShop').classList.toggle('on',cat!=='lampen');$('tabLamp').classList.toggle('on',cat==='lampen');
  if(LM.items.length){setTimeout(loadLimg,L?0:1500);applyBanner()}
  if(L)drawLamps()}
