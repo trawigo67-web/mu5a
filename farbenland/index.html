@@ -207,7 +207,7 @@ footer p{margin:4px 0}
   <button class="btn more" id="more" data-t="more"></button>
  </div>
  <section id="lampen" style="display:none!important">
-  <div class="toolbar"><h2 id="ltitle"></h2><select id="ltype"></select><a class="pdfbtn" href="Farbenland_Katalog.pdf" target="_blank" rel="noopener">📄 <span data-t="pdf"></span></a></div>
+  <div class="toolbar"><h2 id="ltitle"></h2><select id="ltype"></select></div>
   <div class="chips" id="lchips"></div>
   <div class="grid lgrid" id="lgrid"></div>
   <button class="btn more" id="lmore" data-t="more"></button>
@@ -271,7 +271,7 @@ i1t:'Genuine handwork',i1p:'Every piece is handmade – many are unique and exis
 foot:'Oriental living, mosaic lamps, kilims and ceramics – straight from Anatolia to Cologne.',shop:'Shop',contact:'Contact',descNote:'Product description is in German.',
 tShop:'Shop',tLamp:'Lamp catalogue',lampCta:'View lamp catalogue',lbT:'Oriental lamps',lbP:'More than 550 handmade lamps in 13 collections – pendant, wall, floor and table lamps. See them in our store or ask us.',pdf:'Catalogue as PDF',allCol:'All collections',allType:'All types',ask:'Price on request',askTxt:'Available in our store or to order. Ask us for price and delivery time:',wid:'Width',hei:'Height',wei:'Weight',lamps:'lamps',col:'Collection',
 lampOrder:'Order lamps by e-mail',lampNote:'Lamps are ordered directly from us – we will get back to you with delivery time and shipping.',allCol:'All collections',c:{lampen:'Oriental Lamps',keramik:'Ceramics & Wall Art',teppich:'Rugs & Kilims',sitz:'Şark Köşesi & Seating',kissen:'Cushions & Textiles',schmuck:'Jewellery & Prayer Beads',antik:'Antiques & One-offs',deko:'Bags & Décor'}}};
-const ORDER=['keramik','teppich','sitz','kissen','schmuck','antik','deko'];
+const ORDER=['lampen','keramik','teppich','sitz','kissen','schmuck','antik','deko'];
 let P=[],lang='de',cat='all',q='',sort='feat',avail=true,shown=24,cur=null,curV=0,curQ=1,curI=0,cart=[];
 const $=id=>document.getElementById(id);
 const store={get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
@@ -286,7 +286,7 @@ let NEWCUT='';
 const IMG={},TH={};const src=k=>k?(LIMG[k]||IMG[k]||TH[k]||TH[k.replace(/_\d\.jpg$/,'_0.jpg')]||''):'';
 async function loadGal(){for(const f of ['g1.json','g2.json','g3.json','g4.json']){try{Object.assign(IMG,await (await fetch(f)).json());if(cur)drawP()}catch(e){}}drawGrid()}
 
-Promise.all([fetch('products.json').then(r=>r.json()),fetch('thumbs.json').then(r=>r.json()),Promise.resolve({items:[],cols:[]})]).then(([d,th,lm])=>{LM=lm;Object.assign(TH,th);setTimeout(loadGal,300);P=d;NEWCUT=newest();setTimeout(loadLimg,600);cart=store.get('fl_cart',[]).filter(c=>P.find(p=>p.id===c.pid));lang=store.get('fl_lang','de');if(!T[lang])lang='de';
+Promise.all([fetch('products.json').then(r=>r.json()),fetch('thumbs.json').then(r=>r.json()),fetch('lamps.json').then(r=>r.json()).catch(()=>({items:[],cols:[]}))]).then(([d,th,lm])=>{LM=lm;Object.assign(TH,th);setTimeout(loadGal,300);P=d.concat(lampProducts(lm));NEWCUT=newest();setTimeout(loadLimg,600);cart=store.get('fl_cart',[]).filter(c=>P.find(p=>p.id===c.pid));lang=store.get('fl_lang','de');if(!T[lang])lang='de';
  const h=location.hash.slice(1);if(ORDER.includes(h))cat=h;init();});
 
 function init(){
@@ -380,7 +380,7 @@ function openL(nr){const i=LM.items.find(x=>x.nr===nr);if(!i)return;cur=null;
  <div class="lsp" style="font-size:15px;color:var(--ink);gap:18px;margin:10px 0 6px"><span><b>↔</b>${t('wid')} ${esc(i.w)}</span><span><b>↕</b>${t('hei')} ${esc(i.h)}</span><span><b>kg</b>${t('wei')} ${esc(i.kg)} kg</span></div>
  <div class="price" style="font-size:22px">${t('ask')}</div>
  <div class="inq">${t('askTxt')}<br><b>farben-land@web.de</b><br>Farbenland – Berliner Str. 143, 51063 Köln<br><span style="color:var(--mut)">Nr. ${esc(i.nr)}</span></div>
- <a class="pdfbtn" href="Farbenland_Katalog.pdf" target="_blank" rel="noopener">📄 ${t('pdf')}</a></div>`;
+ </div>`;
  $('ov').classList.add('on');document.body.style.overflow='hidden'}
 function openP(id){cur=P.find(p=>p.id===id);const fa=cur.v.findIndex(v=>v.a);curV=fa<0?0:fa;curQ=1;curI=cur.v[curV].im??0;drawP();$('ov').classList.add('on');document.body.style.overflow='hidden'}
 function closeP(){cur=null;$('ov').classList.remove('on');document.body.style.overflow=''}
