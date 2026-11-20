@@ -265,6 +265,8 @@ h1,h2,h3,.site-title{font-family:'Barlow Condensed',sans-serif;text-transform:up
 .woocommerce ul.products>li.product .woocommerce-loop-image-link{display:block!important;position:relative;overflow:hidden;border-radius:10px;background:var(--twv-bg);aspect-ratio:1000/904;margin:0!important;padding:0!important;flex:0 0 auto}
 .woocommerce ul.products>li.product .woocommerce-loop-image-link img{display:block;width:100%!important;height:auto!important;aspect-ratio:1/1;object-fit:cover;margin:0!important;border-radius:0!important;transition:transform .35s ease}
 .woocommerce ul.products>li.product:hover .woocommerce-loop-image-link img{transform:scale(1.04)}
+.woocommerce ul.products>li.product .woocommerce-loop-image-link:has(img.twv-clean),.twv-ph:has(img.twv-clean){aspect-ratio:1/1}
+.woocommerce ul.products>li.product .woocommerce-loop-image-link img.twv-clean,.twv-ph img.twv-clean{mix-blend-mode:multiply}
 .woocommerce ul.products>li.product .onsale{top:8px;left:8px;right:auto;border-radius:6px;background:var(--twv-red);font-size:12px;padding:4px 8px;min-height:0;line-height:1.2}
 .woocommerce ul.products>li.product .product-details{display:grid!important;grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"title title title" "price price cart" "tax ship ship" "time time time";align-items:center;align-content:start;column-gap:0;row-gap:0;padding:10px 2px 0!important;margin:0!important;background:transparent!important;flex:1 1 auto;box-shadow:none!important;text-align:left}
 .woocommerce ul.products>li.product .product-details>*,.woocommerce ul.products>li.product .product-action-wrap>*{grid-column:1/-1;margin:0!important}
