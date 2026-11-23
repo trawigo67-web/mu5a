@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Farbenland Orient Kervan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cinzel+Decorative:wght@700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* VOICE: warm, märchenhaft, ein Erzähler am Lagerfeuer der Karawane
+   IDEA: ein altes Reisebuch der Karawane – jedes Kapitel eine Papyrusseite
+   PICTURE: die Karawane in der Wüste als Titelbild, darunter umblätterbare Buchseiten
+   COLOUR and TYPE: Farbenland-Rot als Einband, Papyrus als Seite, Gold als Akzent; Cinzel + EB Garamond
+   LAYOUT: Einband-Kopf, Titelbild, zwei laufende Banner, Kapitel als Papyrusblätter, Fußzeile */
+:root{color-scheme:dark;--cover:#5e0f12;--cover2:#3a080b;--pap:#ecdcb4;--pap2:#d9c48f;--ink:#2b1a0e;--gold:#d4a43a;--gold2:#f1cf7a;--red:#8e1b1f}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:radial-gradient(1400px 900px at 50% 0,#7a171c,transparent) no-repeat,linear-gradient(var(--cover2),#2a0507);color:var(--pap);font:17px/1.6 "EB Garamond",Georgia,serif;overflow-x:clip}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:Cinzel,serif;line-height:1.1;text-wrap:balance;margin:0 0 .4em}
+h2{font-size:clamp(28px,4vw,44px)}
+h3{font-size:20px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 max(4vw,14px)}
+/* Kopf */
+.top{position:sticky;top:0;z-index:20;background:linear-gradient(#3a080bf0,#3a080be0);border-bottom:1px solid #d4a43a55;backdrop-filter:blur(6px)}
+.top .wrap{display:flex;align-items:center;gap:14px;flex-wrap:wrap;min-height:64px}
+.logo{font-family:"Cinzel Decorative",serif;color:var(--gold2);font-size:22px;text-decoration:none;white-space:nowrap}
+.logo small{display:block;font-family:Cinzel,serif;font-size:11px;color:var(--pap2);letter-spacing:.06em}
+nav.menu{display:flex;gap:4px;flex-wrap:wrap;flex:1}
+nav.menu a{text-decoration:none;padding:10px 10px;font-family:Cinzel,serif;font-size:14px;color:var(--pap);border-radius:6px}
+nav.menu a:hover,nav.menu a:focus-visible{background:#d4a43a22;color:var(--gold2)}
+.tools{display:flex;gap:6px;align-items:center}
+.btn{font:600 15px Cinzel,serif;border:1px solid var(--gold);background:transparent;color:var(--gold2);min-height:44px;padding:0 14px;border-radius:8px;cursor:pointer}
+.btn:hover,.btn:focus-visible{background:var(--gold);color:var(--cover2);outline:none}
+.btn.on{background:var(--gold);color:var(--cover2)}
+.lang button{min-width:44px;padding:0 8px}
+.soc{display:flex;gap:6px}
+.soc span{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#d4a43a22;border:1px solid #d4a43a66}
+.soc svg{width:18px;height:18px;fill:var(--gold2)}
+/* Titelbild */
+.hero{position:relative}
+.hero img{width:100%;aspect-ratio:16/9;max-height:86vh;object-fit:cover}
+.hero .cap{position:absolute;left:0;right:0;bottom:0;padding:60px max(4vw,14px) 26px;background:linear-gradient(transparent,#2a0507ee)}
+.hero p{max-width:720px;margin:0 auto;text-align:center;font-size:clamp(17px,2vw,22px);font-style:italic;color:#fbeed0}
+/* Banner */
+.bands{padding-top:28px;padding-bottom:8px}
+.banner{position:relative;margin:0 0 22px}
+.banner h3{font-family:Cinzel,serif;color:var(--gold2);font-size:16px;margin:0 0 10px}
+.track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:4px}
+.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 calc((100% - 70px)/6);scroll-snap-align:start;position:relative;border:2px solid #d4a43a88;border-radius:10px;overflow:hidden;background:#000}
+.slide img{aspect-ratio:1;object-fit:cover;width:100%;transition:transform .8s}
+.slide:hover img{transform:scale(1.06)}
+.slide span{position:absolute;left:0;right:0;bottom:0;padding:18px 8px 6px;font-size:13px;line-height:1.25;background:linear-gradient(transparent,#000c);color:#fff}
+.arrows{position:absolute;top:-6px;right:0;display:flex;gap:6px}
+.arrows .btn{min-height:36px;padding:0 12px}
+@media(max-width:900px){.slide{flex-basis:calc((100% - 28px)/3)}}
+@media(max-width:520px){.slide{flex-basis:calc((100% - 14px)/2)}}
+/* Papyrusseiten */
+.page{position:relative;margin:34px auto;max-width:1240px;color:var(--ink);background:
+ radial-gradient(ellipse at 20% 10%,#f6ead0 0,transparent 55%),radial-gradient(ellipse at 80% 90%,#c9ad6e55 0,transparent 60%),
+ repeating-linear-gradient(90deg,#0000 0 3px,#a8874a0d 3px 4px),repeating-linear-gradient(0deg,#0000 0 5px,#a8874a0a 5px 6px),var(--pap);
+ border-radius:6px 14px 14px 6px;box-shadow:0 18px 40px #0008,inset 0 0 80px #9c7a3f66,inset 14px 0 18px -10px #6b4a1f88;
+ padding:clamp(24px,4vw,56px) clamp(18px,4vw,60px);transform-origin:left center}
+.page::before{content:"";position:absolute;inset:10px;border:1px solid #8a6a2c66;border-radius:4px;pointer-events:none}
+.page h2{color:var(--red)}
+.page .lead{font-size:19px;max-width:68ch}
+.orn{color:var(--gold);text-align:center;font-size:22px;letter-spacing:.4em;margin:6px 0 14px}
+.flipin{animation:flip 1s cubic-bezier(.2,.7,.2,1) both}
+@keyframes flip{from{transform:perspective(1600px) rotateY(-70deg);opacity:0}to{transform:none;opacity:1}}
+@media(prefers-reduced-motion:reduce){.flipin{animation:none}.slide img{transition:none}html{scroll-behavior:auto}}
+/* Buch der Mosaiklampe */
+.book{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;perspective:1800px;margin-top:10px;background:#c4a666;border-radius:8px;box-shadow:inset 0 0 30px #6b4a1f88}
+.leaf{padding:26px 26px 20px;min-height:300px;display:flex;flex-direction:column;justify-content:center}
+.leaf.l{border-right:2px solid #8a6a2c55;background:linear-gradient(90deg,#ecdcb4 85%,#cdb47a)}
+.leaf.r{background:linear-gradient(270deg,#ecdcb4 85%,#cdb47a)}
+.leaf .num{font-family:Cinzel,serif;color:var(--red);font-size:14px}
+.leaf h3{font-size:clamp(22px,3vw,30px);color:var(--ink)}
+.leaf svg{width:100%;max-height:230px}
+.turn{animation:turn .7s ease both;transform-origin:left center}
+@keyframes turn{from{transform:rotateY(-95deg);filter:brightness(.7)}to{transform:none}}
+.bookbar{display:flex;justify-content:space-between;align-items:center;margin-top:14px;gap:10px}
+.bookbar .btn{color:var(--red);border-color:var(--red)}
+.bookbar .btn:hover{background:var(--red);color:var(--pap)}
+.dots{display:flex;gap:6px}.dots i{width:10px;height:10px;border-radius:50%;background:#8a6a2c55}.dots i.on{background:var(--red)}
+@media(max-width:700px){.book{grid-template-columns:minmax(0,1fr)}.leaf.l{border-right:0;border-bottom:2px solid #8a6a2c55}}
+/* Kategorien */
+.chap{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:34px 0 6px;border-bottom:1px solid #8a6a2c55;padding-bottom:6px}
+.chap b{font-family:Cinzel,serif;color:var(--red);font-size:15px}
+.chap h3{font-size:clamp(22px,3vw,28px);margin:0}
+.story{max-width:75ch;margin:6px 0 14px;font-style:italic}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:16px}
+.card{background:#f3e7c9;border:1px solid #8a6a2c55;border-radius:8px;padding:8px;box-shadow:0 3px 8px #6b4a1f33;cursor:pointer;text-align:left;font:inherit;color:inherit}
+.card:hover,.card:focus-visible{outline:2px solid var(--red);transform:translateY(-2px)}
+.card img{aspect-ratio:1;object-fit:cover;border-radius:5px;width:100%}
+.card h4{font:600 16px/1.25 "EB Garamond",serif;margin:8px 2px 4px}
+.card small{color:var(--red);font-family:Cinzel,serif;font-size:13px}
+.soon{border:1px dashed #8a6a2c;border-radius:8px;padding:14px 16px;color:#6b4a1f;font-style:italic}
+.coll{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin:10px 0 18px}
+.coll div{border:1px solid #8a6a2c77;border-radius:8px;padding:12px;text-align:center;background:#f3e7c9}
+.coll b{display:block;font-family:Cinzel,serif;color:var(--red);font-size:20px}
+.coll span{font-size:14px;color:#6b4a1f}
+/* Produkt-Dialog */
+dialog{border:0;padding:0;border-radius:12px;max-width:min(900px,94vw);background:var(--pap);color:var(--ink);box-shadow:0 30px 80px #000c}
+dialog::backdrop{background:#1a0304cc}
+.dlg{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)}
+.dlg img{width:100%;height:100%;object-fit:cover;aspect-ratio:1}
+.dlg .txt{padding:24px}
+.dlg h3{color:var(--red);font-size:26px}
+.wa{display:inline-flex;align-items:center;gap:8px;background:#1f8f4e;color:#fff;text-decoration:none;font:600 16px Cinzel,serif;min-height:46px;padding:0 18px;border-radius:8px;margin-top:10px}
+.x{position:absolute;top:8px;right:8px;background:var(--pap);color:var(--ink);border-color:var(--ink)}
+@media(max-width:640px){.dlg{grid-template-columns:minmax(0,1fr)}}
+/* Karawanenweg */
+.route{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px;align-items:center}
+.route svg{width:100%}
+@media(max-width:760px){.route{grid-template-columns:minmax(0,1fr)}}
+/* Raumplaner */
+.planner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px}
+@media(max-width:760px){.planner{grid-template-columns:minmax(0,1fr)}}
+.drop{border:2px dashed var(--red);border-radius:10px;min-height:260px;display:grid;place-items:center;text-align:center;padding:16px;background:#f3e7c9;position:relative;overflow:hidden}
+.drop img,.drop video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+label{display:block;font-family:Cinzel,serif;font-size:14px;margin:10px 0 4px}
+input[type=text],textarea,select{width:100%;font:16px "EB Garamond",serif;padding:10px;border:1px solid #8a6a2c;border-radius:6px;background:#fbf4e2;color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips label{display:inline-flex;align-items:center;gap:6px;margin:0;padding:8px 12px;border:1px solid #8a6a2c;border-radius:20px;font-size:14px;cursor:pointer;min-height:40px}
+.chips input:checked+span{color:var(--red);font-weight:700}
+/* Fuß */
+html{background:var(--cover2)}footer{background:var(--cover2);padding-bottom:80px!important;border-top:2px solid var(--gold);margin-top:40px;padding:36px 0 26px}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+footer h3{color:var(--gold2);font-size:17px}
+footer p{margin:0 0 6px}
+.note{font-size:13px;color:#d9c48f;text-align:center;margin-top:22px}
+.music{position:fixed;left:14px;bottom:14px;z-index:30;border-radius:30px;background:var(--cover2);box-shadow:0 6px 18px #000a}
+@media(max-width:700px){.top{position:static}.top .wrap{padding-block:8px;gap:8px}.top .soc{display:none}.tools{margin-left:auto}
+nav.menu{order:3;flex:0 0 100%;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}nav.menu a{white-space:nowrap;padding:10px 8px;flex:none}
+.hero .cap{position:static;background:#2a0507;padding:16px 14px}.hero img{max-height:none}
+.bookbar .btn{padding:0 10px;font-size:13px}.music{min-height:40px;font-size:13px}.leaf{min-height:0}}
+footer .soc{margin-top:10px}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+ <a class="logo" href="#start">Farbenland<small>Orient Kervan · Köln</small></a>
+ <nav class="menu" aria-label="Hauptmenü">
+  <a href="#lampe" data-i="nLamp">Mosaiklampe</a><a href="#katalog" data-i="nCat">Katalog</a><a href="#karawane" data-i="nCar">Karawane</a><a href="#raum" data-i="nRoom">Raumplaner</a><a href="#kontakt" data-i="nCon">Kontakt</a>
+ </nav>
+ <div class="tools">
+  <div class="soc" aria-label="Social Media">
+   <span title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM12 2c-2.7 0-3 0-4.1.1C4.5 2.3 2.3 4.5 2.1 7.9 2 9 2 9.3 2 12s0 3 .1 4.1c.2 3.4 2.4 5.6 5.8 5.8 1.1.1 1.4.1 4.1.1s3 0 4.1-.1c3.4-.2 5.6-2.4 5.8-5.8.1-1.1.1-1.4.1-4.1s0-3-.1-4.1c-.2-3.4-2.4-5.6-5.8-5.8C15 2 14.7 2 12 2z"/></svg></span>
+   <span title="YouTube"><svg viewBox="0 0 24 24"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.7 15.1V8.9l5.8 3.1-5.8 3.1z"/></svg></span>
+   <span title="TikTok"><svg viewBox="0 0 24 24"><path d="M16.6 2h-3.4v13.4a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .8.1V9.1a6.4 6.4 0 1 0 5.5 6.3V8.6a8 8 0 0 0 4.6 1.5V6.7a4.6 4.6 0 0 1-4.6-4.7z"/></svg></span>
+   <span title="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8.5V6.6c0-.9.6-1.1 1-1.1h2.6V2H14c-3.9 0-4.8 2.9-4.8 4.8v1.7H7v3.6h2.2V22H14v-9.9h3.3l.4-3.6H14z"/></svg></span>
+  </div>
+  <div class="lang" role="group" aria-label="Sprache"><button class="btn on" data-l="de">DE</button><button class="btn" data-l="tr">TR</button><button class="btn" data-l="en">EN</button></div>
+ </div>
+</div></header>
+
+<section class="hero" id="start">
+ <img src="img/hero.jpg" alt="Karawane mit Mosaiklampen, Kelims und Keramik zieht bei Sonnenuntergang durch die Wüste, vorne der Karawanenführer">
+ <div class="cap"><p data-i="heroTxt">Seit Jahrhunderten tragen Karawanen die Schätze des Orients über Wüsten und Berge. Heute führt ihr Weg zu uns nach Köln – jedes Stück von Hand gemacht, jedes ein Unikat.</p></div>
+</section>
+
+<div class="wrap bands">
+ <div class="banner"><h3 data-i="b1">Licht &amp; Wohnen</h3><div class="arrows"><button class="btn" data-dir="-1" aria-label="zurück">‹</button><button class="btn" data-dir="1" aria-label="weiter">›</button></div><div class="track" id="t1"></div></div>
+ <div class="banner"><h3 data-i="b2">Keramik, Schmuck &amp; Textilien</h3><div class="arrows"><button class="btn" data-dir="-1" aria-label="zurück">‹</button><button class="btn" data-dir="1" aria-label="weiter">›</button></div><div class="track" id="t2"></div></div>
+</div>
+
+<div class="wrap">
+ <article class="page" id="lampe">
+  <div class="orn">✦ ✦ ✦</div>
+  <h2 data-i="lampH">Das Buch der Mosaiklampe</h2>
+  <p class="lead" data-i="lampL">Blättern Sie durch die Geschichte eines Lichts – vom Wüstensand bis zum Leuchten in Ihrem Zuhause.</p>
+  <div class="book" id="book"></div>
+  <div class="bookbar"><button class="btn" id="prev" data-i="prev">‹ Zurück</button><div class="dots" id="dots"></div><button class="btn" id="next" data-i="next">Weiterblättern ›</button></div>
+ </article>
+
+ <article class="page" id="katalog">
+  <div class="orn">✦ ✦ ✦</div>
+  <h2 data-i="catH">Der Katalog der Karawane</h2>
+  <p class="lead" data-i="catL">Unser Katalog endet nie: Mit jeder neuen Reise kommen neue Kapitel dazu. Tippen Sie auf ein Stück, um seine Geschichte zu lesen.</p>
+  <div id="chapters"></div>
+ </article>
+
+ <article class="page" id="karawane">
+  <div class="orn">✦ ✦ ✦</div>
+  <div class="route">
+   <svg viewBox="0 0 600 340" role="img" aria-label="Karte der Karawanenroute von Mesopotamien über Persien und Anatolien nach Köln">
+    <rect width="600" height="340" rx="10" fill="#e3cf9c"/>
+    <path d="M0 250 Q120 210 200 240 T420 220 T600 240 V340 H0Z" fill="#d6bd82"/>
+    <path d="M60 120 l30-40 30 40z M95 120 l25-30 25 30z" fill="#b99a5c"/>
+    <path id="rt" d="M470 270 C420 250 400 210 360 200 S280 170 250 150 S170 110 130 95 S70 60 40 40" fill="none" stroke="#8e1b1f" stroke-width="3" stroke-dasharray="8 7"/>
+    <g font-family="Cinzel,serif" font-size="15" fill="#2b1a0e">
+     <circle cx="470" cy="270" r="7" fill="#8e1b1f"/><text x="436" y="300">Mesopotamien</text>
+     <circle cx="360" cy="200" r="7" fill="#8e1b1f"/><text x="372" y="190">Persien</text>
+     <circle cx="250" cy="150" r="7" fill="#8e1b1f"/><text x="262" y="140">Anatolien · Seldschuken</text>
+     <circle cx="130" cy="95" r="7" fill="#8e1b1f"/><text x="142" y="112">Istanbul</text>
+     <circle cx="40" cy="40" r="9" fill="#d4a43a" stroke="#8e1b1f" stroke-width="3"/><text x="58" y="45" font-weight="700">Köln · Farbenland</text>
+    </g>
+    <g id="camel" fill="#2b1a0e"><path d="M-14 0 q2-12 10-12 q4-8 10 0 q6 0 8 6 l6-6 4 2-6 8 v10 h-3 v-8 h-14 v8 h-3 v-8 q-6-2-12 0z"/></g>
+   </svg>
+   <div>
+    <h2 data-i="carH">Der Weg der Karawane</h2>
+    <p data-i="carT">Von Mesopotamien, der Wiege der Kultur, zogen Händler über Persien nach Anatolien. In den Karawansereien der Seldschuken rasteten sie, tauschten Seide, Keramik und Teppiche. Über Istanbul gelangten die Schätze nach Europa – und heute bringt unsere Karawane sie direkt zu Ihnen nach Köln.</p>
+   </div>
+  </div>
+ </article>
+
+ <article class="page" id="raum">
+  <div class="orn">✦ ✦ ✦</div>
+  <h2 data-i="roomH">Ihr Raum, von uns eingerichtet</h2>
+  <p class="lead" data-i="roomL">Laden Sie ein Foto oder Video Ihres Zimmers hoch. Wir richten es mit Sitzecke, Mosaiklampen, Kelims und Keramik ein und schicken Ihnen einen Vorschlag.</p>
+  <form class="planner" id="plan">
+   <label class="drop" id="drop"><input type="file" id="file" accept="image/*,video/*" hidden><span data-i="drop">📷 Foto oder Video Ihres Raumes hierher ziehen oder antippen</span></label>
+   <div>
+    <label data-i="want">Was wünschen Sie sich?</label>
+    <div class="chips" id="chips"></div>
+    <label for="col" data-i="colL">Lieblingsfarben</label><input type="text" id="col" placeholder="z. B. Rot, Gold, Türkis">
+    <label for="msg" data-i="msgL">Ihre Nachricht</label><textarea id="msg" rows="3"></textarea>
+    <a class="wa" id="planwa" href="#" target="_blank" rel="noopener" data-i="send">Vorschlag per WhatsApp anfragen</a>
+    <p style="font-size:14px;margin-top:8px" data-i="planNote">Das Foto senden Sie danach direkt im WhatsApp-Chat.</p>
+   </div>
+  </form>
+ </article>
+</div>
+
+<footer id="kontakt"><div class="wrap">
+ <div class="fgrid">
+  <div><h3>Farbenland Orient Kervan</h3><p>Berliner Str. 143<br>51063 Köln</p></div>
+  <div><h3 data-i="hrs">Öffnungszeiten</h3><p data-i="hrsT">Mo–Sa 10–20 Uhr<br>So geschlossen</p></div>
+  <div><h3 data-i="call">Kontakt</h3><p>WhatsApp &amp; Telefon:<br><a href="https://wa.me/491735326963">+49 173 5326963</a></p><div class="soc" id="fsoc"></div></div>
+ </div>
+ <p class="note" data-i="demo">Vorschau-Entwurf zum Zeigen · Texte sind Beispieltexte · Preise auf Anfrage</p>
+</div></footer>
+
+<button class="btn music" id="music" aria-pressed="false">♪ <span data-i="mus">Musik an</span></button>
+
+<dialog id="dlg"><div class="dlg"><img id="dImg" alt=""><div class="txt"><button class="btn x" id="dx" aria-label="Schließen">✕</button><small id="dCat" style="font-family:Cinzel,serif;color:#8e1b1f"></small><h3 id="dT"></h3><p id="dS"></p><p><b data-i="price">Preis auf Anfrage</b></p><a class="wa" id="dWa" target="_blank" rel="noopener" data-i="ask">Preis per WhatsApp anfragen</a></div></div></dialog>
+<script>{
+const P={"Mosaiklampen": [["Mosaik-Wand- & Deckenlampe 60 cm", "img/p0.jpg", "mosaik-wand-deckenlampe-60-cm"], ["Mosaik-Wand- & Deckenlampe 30 cm", "img/p1.jpg", "mosaik-wand-deckenlampe-30-cm"], ["Mosaik-Tischlampe Schwan", "img/p2.jpg", "mosaik-tischlampe-schwan"], ["Mosaik-Tischlampe Rund", "img/p3.jpg", "mosaik-tischlampe-rund"], ["Mosaik-Tischlampe Oval", "img/p4.jpg", "mosaik-tischlampe-oval"], ["Mosaik-Tischlampe Mini", "img/p5.jpg", "mosaik-tischlampe-mini"]], "Orientalische Sitzecken": [["Wanddeko für die Sitzecke", "img/p6.jpg", "wanddeko-sitzecke"], ["Orientalisches Tisch-Set mit Hocker", "img/p7.jpg", "tisch-set-mit-hocker"], ["Sitzkissen 70×100 cm – Unikat", "img/p8.jpg", "sitzkissen-70x100-unikat"], ["Orientalische Sitzecke mit Sedir", "img/p9.jpg", "sitzecke-mit-sedir"], ["Orientalische Sitzecke für 3 Personen 70×190 cm, 4-teilig", "img/p10.jpg", "sitzecke-3-personen-70x190-4-teilig"]], "Teppiche & Kelims": [["Uşak-Kelim 200×300 cm", "img/p11.jpg", "usak-kelim-200x300"]], "Kissen & Textilien": [["Orientalischer Tischläufer", "img/p12.jpg", "tischlaeufer-orientalisch"], ["Teppich-Rucksack – Unikat", "img/p13.jpg", "teppich-rucksack-unikat"], ["Patchwork-Kissenbezug 60×60 cm", "img/p14.jpg", "patchwork-kissenbezug-60x60"], ["Patchwork-Kissenbezug 40×40 cm", "img/p15.jpg", "patchwork-kissenbezug-40x40"], ["Kelim-Kissen", "img/p16.jpg", "kelim-kissen"], ["Gobelin-Kissenbezug Frida Kahlo", "img/p17.jpg", "gobelin-kissenbezug-frida-kahlo"]], "Wandteller": [["Wandteller XXL 60 cm", "img/p18.jpg", "wandteller-xxl-60-cm"], ["Wandteller Schwarz-Weiß 30 cm", "img/p19.jpg", "wandteller-schwarz-weiss-30-cm"], ["Wandteller 40 cm", "img/p20.jpg", "wandteller-40-cm"], ["Wandteller 30 cm Kölner Dom", "img/p21.jpg", "wandteller-30-cm-koelner-dom"], ["Wandteller 30 cm Jüdisches Motiv", "img/p22.jpg", "wandteller-30-cm-juedisches-motiv"], ["Wandteller 30 cm bunt – Unikat", "img/p23.jpg", "wandteller-30-cm-bunt-unikat"]], "Schalen & Dosen": [["Servierschalen-Set Windrose 8-teilig", "img/p24.jpg", "servierschalen-set-windrose-8-teilig"], ["Keramik-Schmuckdose", "img/p25.jpg", "keramik-schmuckdose"], ["Reisschale Türkis 30 cm mit Deckel", "img/p26.jpg", "keramik-reisschale-tuerkis-30-cm-mit-deckel"], ["Orientalische Schmuckdose", "img/p27.jpg", "orientalische-schmuckdose"], ["Obstschale 2 Etagen", "img/p28.jpg", "keramik-obstschale-2-etagen"], ["Keramikschale groß", "img/p29.jpg", "keramikschale-gross"]], "Vasen, Krüge & Kannen": [["Keramik-Wasserkrug mit Deckel 25 cm Kartanesi", "img/p30.jpg", "keramik-wasserkrug-mit-deckel-25-cm-kartanesi"], ["Keramik-Wasserkanne 30 cm Kartanesi", "img/p31.jpg", "keramik-wasserkanne-30-cm-kartanesi"], ["Orientalische Keramikvase 20 cm", "img/p32.jpg", "orientalische-keramikvase-20-cm"], ["Keramik-Milchkrug 25 cm", "img/p33.jpg", "keramik-milchkrug-25-cm"], ["Keramik-Krug Kartanesi 20 cm Lila", "img/p34.jpg", "keramik-krug-kartanesi-20-cm-lila"], ["Keramik-Kanne Türkis 20 cm", "img/p35.jpg", "keramik-kanne-tuerkis-20-cm"]], "Schmuck": [["Unisex-Armband Naturstein", "img/p36.jpg", "unisex-armband-naturstein"], ["Schlüsselanhänger", "img/p37.jpg", "schluesselanhaenger"], ["Kupfer-Ohrringe", "img/p38.jpg", "kupfer-ohrringe"], ["Herren-Armband Kunstleder", "img/p39.jpg", "herren-armband-kunstleder"], ["Gebetskette (Tesbih) Naturstein 8 mm", "img/p40.jpg", "gebetskette-naturstein-8-mm"], ["Gebetskette (Tesbih) Naturstein 10 mm", "img/p41.jpg", "gebetskette-naturstein-10-mm"]], "Uhren": [["Naturstein-Wanduhr Katzen 20×20 cm", "img/p42.jpg", "naturstein-wanduhr-katzen-20x20"], ["Naturstein-Uhr 15×15 cm mit Geschenkbox", "img/p43.jpg", "naturstein-uhr-15x15-mit-geschenkbox"]], "Mokka-Sets & Tassen": [["Mokka-Set für 6 Personen 12-teilig mit Geschenkbox", "img/p44.jpg", "mokka-set-6-personen-12-teilig-mit-geschenkbox"], ["Mokka-Set für 2 Personen mit Geschenkbox", "img/p45.jpg", "mokka-set-2-personen-mit-geschenkbox"], ["Bräutigam-Tasse Kız İsteme 3-teilig", "img/p46.jpg", "braeutigam-tasse-kiz-isteme-3-teilig"]], "Marokkanische & Glaslampen": [["Mundgeblasene Hängelampe 18-teilig", "img/p47.jpg", "mundgeblasene-haengelampe-18-teilig"], ["Mundgeblasene Glaslampe 5-teilig", "img/p48.jpg", "mundgeblasene-glaslampe-5-teilig"], ["Marokkanische Stehlampe Zylinder 110 cm", "img/p49.jpg", "marokkanische-stehlampe-zylinder-110-cm"], ["Marokkanische Stehlampe 70 cm", "img/p50.jpg", "marokkanische-stehlampe-70-cm"], ["Marokkanische Stehlampe 7-teilig", "img/p51.jpg", "marokkanische-stehlampe-7-teilig"]], "Figuren & Deko": [["Zülfikar-Schwert aus Keramik 50 cm", "img/p52.jpg", "keramik-zuelfikar-schwert-50-cm"], ["Zülfikar-Schwert aus Keramik 35 cm", "img/p53.jpg", "keramik-zuelfikar-schwert-35-cm"], ["Keramik-Wanddeko 5–20 cm", "img/p54.jpg", "keramik-wanddeko"], ["Keramik-Teelichthalter Granatapfel", "img/p55.jpg", "keramik-teelichthalter-granatapfel"], ["Mini-Hırka (Kaftan) 5 cm", "img/p56.jpg", "keramik-mini-hirka-5-cm"], ["Keramikfigur Taube", "img/p57.jpg", "keramik-figur-taube"]], "Kachel- & Mosaikbilder": [["Keramikfliese 20×20 cm", "img/p58.jpg", "keramikfliese-20x20"], ["Keramikfliese 10×10 cm", "img/p59.jpg", "keramikfliese-10x10"], ["Kachelbild 40×60 cm mit Rahmen", "img/p60.jpg", "kachelbild-40x60-mit-rahmen"], ["Kachelbild 40×40 cm mit Rahmen", "img/p61.jpg", "kachelbild-40x40-mit-rahmen"], ["Kachelbild 25×50 cm mit Rahmen", "img/p62.jpg", "kachelbild-25x50-mit-rahmen"], ["Kachelbild 25×25 cm mit Rahmen", "img/p63.jpg", "kachelbild-25x25-mit-rahmen"]]};
+const T={
+de:{nLamp:"Mosaiklampe",nCat:"Katalog",nCar:"Karawane",nRoom:"Raumplaner",nCon:"Kontakt",heroTxt:"Seit Jahrhunderten tragen Karawanen die Schätze des Orients über Wüsten und Berge. Heute führt ihr Weg zu uns nach Köln – jedes Stück von Hand gemacht, jedes ein Unikat.",b1:"Licht & Wohnen",b2:"Keramik, Schmuck & Textilien",lampH:"Das Buch der Mosaiklampe",lampL:"Blättern Sie durch die Geschichte eines Lichts – vom Wüstensand bis zum Leuchten in Ihrem Zuhause.",prev:"‹ Zurück",next:"Weiterblättern ›",catH:"Der Katalog der Karawane",catL:"Unser Katalog endet nie: Mit jeder neuen Reise kommen neue Kapitel dazu. Tippen Sie auf ein Stück, um seine Geschichte zu lesen.",carH:"Der Weg der Karawane",carT:"Von Mesopotamien, der Wiege der Kultur, zogen Händler über Persien nach Anatolien. In den Karawansereien der Seldschuken rasteten sie, tauschten Seide, Keramik und Teppiche. Über Istanbul gelangten die Schätze nach Europa – und heute bringt unsere Karawane sie direkt zu Ihnen nach Köln.",roomH:"Ihr Raum, von uns eingerichtet",roomL:"Laden Sie ein Foto oder Video Ihres Zimmers hoch. Wir richten es mit Sitzecke, Mosaiklampen, Kelims und Keramik ein und schicken Ihnen einen Vorschlag.",drop:"📷 Foto oder Video Ihres Raumes hierher ziehen oder antippen",want:"Was wünschen Sie sich?",colL:"Lieblingsfarben",msgL:"Ihre Nachricht",send:"Vorschlag per WhatsApp anfragen",planNote:"Das Foto senden Sie danach direkt im WhatsApp-Chat.",hrs:"Öffnungszeiten",hrsT:"Mo–Sa 10–20 Uhr<br>So geschlossen",call:"Kontakt",demo:"Vorschau-Entwurf zum Zeigen · Texte sind Beispieltexte · Preise auf Anfrage",mus:"Musik an",musOff:"Musik aus",price:"Preis auf Anfrage",ask:"Preis per WhatsApp anfragen",chap:"Kapitel",soon:"Dieses Kapitel wird gerade geschrieben – die Stücke sind im Laden schon da.",coll:"Kollektion",collN:"Name folgt",gift:"Handgemacht, ein Unikat – kein zweites Stück ist genau gleich. Ein Geschenk, das bleibt."},
+tr:{nLamp:"Mozaik Lamba",nCat:"Katalog",nCar:"Kervan",nRoom:"Oda Planlayıcı",nCon:"İletişim",heroTxt:"Yüzyıllardır kervanlar Doğu'nun hazinelerini çöllerden ve dağlardan taşıdı. Bugün yolları Köln'de bize çıkıyor – her parça el yapımı, her biri tek.",b1:"Işık & Yaşam",b2:"Seramik, Takı & Tekstil",lampH:"Mozaik Lambanın Kitabı",lampL:"Bir ışığın hikâyesini sayfa sayfa çevirin – çöl kumundan evinizdeki ışıltıya.",prev:"‹ Geri",next:"Sayfayı çevir ›",catH:"Kervanın Kataloğu",catL:"Kataloğumuz hiç bitmez: Her yeni yolculukta yeni bölümler eklenir. Hikâyesini okumak için bir parçaya dokunun.",carH:"Kervanın Yolu",carT:"Medeniyetin beşiği Mezopotamya'dan tüccarlar İran üzerinden Anadolu'ya geçti. Selçuklu kervansaraylarında konakladılar; ipek, seramik ve halı takas ettiler. İstanbul üzerinden hazineler Avrupa'ya ulaştı – bugün kervanımız onları doğrudan Köln'e, size getiriyor.",roomH:"Odanızı biz döşeyelim",roomL:"Odanızın fotoğrafını veya videosunu yükleyin. Şark köşesi, mozaik lamba, kilim ve seramikle döşeyip size bir öneri gönderelim.",drop:"📷 Odanızın fotoğraf veya videosunu buraya sürükleyin ya da dokunun",want:"Ne istersiniz?",colL:"Sevdiğiniz renkler",msgL:"Mesajınız",send:"WhatsApp ile öneri iste",planNote:"Fotoğrafı ardından doğrudan WhatsApp sohbetinde gönderin.",hrs:"Çalışma saatleri",hrsT:"Pzt–Cmt 10:00–20:00<br>Pazar kapalı",call:"İletişim",demo:"Gösterim taslağı · Metinler örnektir · Fiyat talep üzerine",mus:"Müzik aç",musOff:"Müzik kapat",price:"Fiyat talep üzerine",ask:"Fiyatı WhatsApp ile sor",chap:"Bölüm",soon:"Bu bölüm şu an yazılıyor – ürünler mağazada mevcut.",coll:"Koleksiyon",collN:"İsim gelecek",gift:"El yapımı, tek parça – ikincisi asla aynı olmaz. Kalıcı bir hediye."},
+en:{nLamp:"Mosaic Lamp",nCat:"Catalogue",nCar:"Caravan",nRoom:"Room Planner",nCon:"Contact",heroTxt:"For centuries caravans carried the treasures of the Orient across deserts and mountains. Today their road leads to us in Cologne – every piece handmade, every one unique.",b1:"Light & Living",b2:"Ceramics, Jewellery & Textiles",lampH:"The Book of the Mosaic Lamp",lampL:"Turn the pages of a light's story – from desert sand to the glow in your home.",prev:"‹ Back",next:"Turn the page ›",catH:"The Caravan's Catalogue",catL:"Our catalogue never ends: every new journey adds new chapters. Tap a piece to read its story.",carH:"The Caravan Route",carT:"From Mesopotamia, the cradle of civilisation, traders travelled through Persia to Anatolia. They rested in Seljuk caravanserais, trading silk, ceramics and carpets. Through Istanbul the treasures reached Europe – and today our caravan brings them straight to you in Cologne.",roomH:"Your room, furnished by us",roomL:"Upload a photo or video of your room. We furnish it with a floor seating set, mosaic lamps, kilims and ceramics and send you a proposal.",drop:"📷 Drop or tap to add a photo or video of your room",want:"What would you like?",colL:"Favourite colours",msgL:"Your message",send:"Request a proposal on WhatsApp",planNote:"Then send the photo directly in the WhatsApp chat.",hrs:"Opening hours",hrsT:"Mon–Sat 10 am – 8 pm<br>Sunday closed",call:"Contact",demo:"Preview draft · sample texts · prices on request",mus:"Music on",musOff:"Music off",price:"Price on request",ask:"Ask for the price on WhatsApp",chap:"Chapter",soon:"This chapter is being written – the pieces are already in our shop.",coll:"Collection",collN:"Name to follow",gift:"Handmade and one of a kind – no second piece is ever the same. A gift that lasts."}};
+const C=[
+{k:"Mosaiklampen",n:{de:"Mosaiklampen",tr:"Mozaik Lambalar",en:"Mosaic Lamps"},s:{de:"Tausende Glassteinchen, von Hand gesetzt, Stück für Stück. Wenn sie leuchten, tanzt der Orient an Ihren Wänden – im Wohnzimmer, im Hotel, in der Villa.",tr:"Binlerce cam taş, tek tek elle dizilir. Yandığında Doğu duvarlarınızda dans eder – salonda, otelde, villada.",en:"Thousands of glass pieces, set by hand one by one. When they glow, the Orient dances on your walls."},coll:1},
+{k:"Marokkanische & Glaslampen",n:{de:"Marokkanische & Glaslampen",tr:"Fas ve Cam Lambalar",en:"Moroccan & Glass Lamps"},s:{de:"Durchbrochenes Metall und geblasenes Glas werfen Muster aus Licht und Schatten in den Raum.",tr:"Oyma metal ve üfleme cam, odaya ışık ve gölgeden desenler çizer.",en:"Pierced metal and blown glass cast patterns of light and shadow."}},
+{k:"Orientalische Sitzecken",n:{de:"Orientalische Sitzecken",tr:"Şark Köşeleri",en:"Oriental Floor Seating"},s:{de:"Einzeln, als Dreier-Set oder mit Sedir, 30 cm hoch: Sitzen wie in den Palästen Anatoliens – mit passendem Teppich, Kissen, Wanddeko und Bezügen.",tr:"Tekli, üçlü veya sedirli, 30 cm yükseklikte: Anadolu saraylarındaki gibi oturun – uyumlu halı, yastık, duvar dekoru ve kılıflarla.",en:"Single, three-piece or with sedir, 30 cm high: sit like in Anatolian palaces."}},
+{k:"Teppiche & Kelims",n:{de:"Uşak-Kelims & Woll-Kelims",tr:"Uşak Kilimleri & Yün Kilimler",en:"Uşak & Wool Kilims"},s:{de:"Doppelseitige Uşak-Kelims von 60×110 bis 200×300 cm – und echte, handgewebte Woll-Kelims, an denen Weberinnen wochenlang Faden um Faden arbeiten.",tr:"60×110'dan 200×300 cm'ye çift taraflı Uşak kilimleri – ve dokumacıların haftalarca ilmek ilmek işlediği hakiki el dokuması yün kilimler.",en:"Double-sided Uşak kilims from 60×110 to 200×300 cm – and genuine hand-woven wool kilims."}},
+{k:"Kissen & Textilien",n:{de:"Dekorative Kissen",tr:"Dekoratif Yastıklar",en:"Decorative Cushions"},s:{de:"Tulpen-, Palast- und Patchwork-Kissen, 40×40 und 60×60, auf echtem Samt: Baumwolle, waschbar, doppelseitig, mit Reißverschluss.",tr:"Laleli, saray ve patchwork yastıklar, 40×40 ve 60×60, hakiki kadife üzerine: pamuk, yıkanabilir, çift taraflı, fermuarlı.",en:"Tulip, palace and patchwork cushions on real velvet: cotton, washable, double-sided, zipped."}},
+{k:"Wandteller",n:{de:"Keramik-Wandteller",tr:"Seramik Duvar Tabakları",en:"Ceramic Wall Plates"},s:{de:"Von 15 bis 60 cm, in der Tradition der Kütahya-Çini bemalt. Selbst bei gleichem Motiv gleicht kein Teller dem anderen.",tr:"15'ten 60 cm'ye, Kütahya çinisi geleneğiyle boyanmış. Aynı desen olsa bile hiçbir tabak diğerinin aynısı değildir.",en:"From 15 to 60 cm, painted in the Kütahya tile tradition. No two plates are alike."}},
+{k:"Schalen & Dosen",n:{de:"Schalen & Dosen",tr:"Kâseler & Şekerlikler",en:"Bowls & Boxes"},s:{de:"Schalen von 20 bis 45 cm und Zuckerdosen – handbemalt, für den Tisch oder als Blickfang im Regal.",tr:"20'den 45 cm'ye kâseler ve şekerlikler – elle boyanmış, sofra veya raf için.",en:"Bowls from 20 to 45 cm and sugar boxes – hand-painted."}},
+{k:"Vasen, Krüge & Kannen",n:{de:"Vasen, Krüge & Kannen",tr:"Vazolar, Testiler & İbrikler",en:"Vases, Jugs & Ewers"},s:{de:"Von der kleinen Vase bis zur großen Bodenvase – Formen, wie sie schon in osmanischen Palästen standen.",tr:"Küçük vazodan büyük yer vazosuna – Osmanlı saraylarındaki formlar.",en:"From small vases to large floor vases – shapes once found in Ottoman palaces."}},
+{k:"Mokka-Sets & Tassen",n:{de:"Mokka-Sets & Tassen",tr:"Kahve Takımları",en:"Coffee Sets"},s:{de:"Türkischer Mokka schmeckt aus handbemalten Tassen doppelt so gut.",tr:"Türk kahvesi el boyaması fincanlarda iki kat güzel.",en:"Turkish coffee tastes twice as good from hand-painted cups."}},
+{k:"Figuren & Deko",n:{de:"Figuren & Deko",tr:"Biblolar & Dekor",en:"Figurines & Decor"},s:{de:"Kleine Schätze für Regal und Vitrine.",tr:"Raf ve vitrin için küçük hazineler.",en:"Little treasures for shelf and cabinet."}},
+{k:"Kachel- & Mosaikbilder",n:{de:"Kachel- & Mosaikbilder",tr:"Çini & Mozaik Panolar",en:"Tile & Mosaic Panels"},s:{de:"Ganze Bilder aus Fliesen und Mosaik – auch als Ladenschild nach Wunsch.",tr:"Çini ve mozaikten panolar – isteğe göre tabela olarak da.",en:"Whole pictures in tile and mosaic – also as custom shop signs."}},
+{k:"_taschen",n:{de:"Taschen, Geldbörsen & Rucksäcke",tr:"Bayan Çantaları, Cüzdanlar & Sırt Çantaları",en:"Bags, Purses & Backpacks"},s:{de:"Im Gobelin-Stil gewebt, nie fotobedruckt: Baumwolle, 30 °C waschbar, farbecht, doppelseitig. Dazu handgewebte Teppich-Rucksäcke – jeder ein Unikat.",tr:"Goblen tarzı dokuma, asla fotoğraf baskı değil: pamuk, 30 °C'de yıkanabilir, renk garantili. Ayrıca el dokuması kilim sırt çantaları – her biri tek.",en:"Woven in gobelin style, never photo-printed: cotton, washable at 30 °C, colourfast."}},
+{k:"Schmuck",n:{de:"Naturstein- & Kristallschmuck",tr:"Doğal Taş & Kristal Takılar",en:"Gemstone & Crystal Jewellery"},s:{de:"Armbänder, Ketten, Sets und Ringe aus Natursteinen aus Indien, Afghanistan und Pakistan – nach alter Überlieferung passend zum Sternzeichen gewählt.",tr:"Hindistan, Afganistan ve Pakistan'dan doğal taşlardan bileklik, kolye, takım ve yüzükler – eski geleneğe göre burcunuza uygun.",en:"Bracelets, necklaces and rings in natural stones from India, Afghanistan and Pakistan."}},
+{k:"Uhren",n:{de:"Naturstein-Uhren",tr:"Doğal Taş Saatler",en:"Natural Stone Clocks"},s:{de:"Tisch- und Wanduhren aus echtem Naturstein, schwer und edel, in der Geschenkbox.",tr:"Hakiki doğal taştan masa ve duvar saatleri, ağır ve şık, hediye kutusunda.",en:"Table and wall clocks in genuine stone, in a gift box."}},
+{k:"_tesbih",n:{de:"Gebetsketten",tr:"Tespihler",en:"Prayer Beads"},s:{de:"Aus Naturstein, jede Kette mit eigener Farbe und eigenem Charakter.",tr:"Doğal taştan, her biri kendine has renk ve karakterde.",en:"In natural stone, each with its own colour and character."}},
+{k:"_vintage",n:{de:"Vintage & Antik",tr:"Vintage & Antika",en:"Vintage & Antiques"},s:{de:"Alte Kissen, Polster, Brieföffner, Ringe und Schmuck mit Geschichte.",tr:"Eski yastıklar, döşekler, mektup açacakları, yüzükler ve hikâyeli takılar.",en:"Old cushions, letter openers, rings and jewellery with a past."}},
+{k:"_muenzen",n:{de:"Münzen",tr:"Madeni Paralar",en:"Coins"},s:{de:"Alte Metallmünzen für Sammler.",tr:"Koleksiyonerler için eski madeni paralar.",en:"Old metal coins for collectors."}},
+{k:"_nazar",n:{de:"Keramik-Deko „Blaue Augen“",tr:"Seramik Nazar Dekor",en:"Ceramic Evil-Eye Decor"},s:{de:"Nazar-Deko aus Keramik in zwei Größen.",tr:"İki boyda seramik nazar dekoru.",en:"Ceramic evil-eye decor in two sizes."}}];
+const BOOK=[
+{de:["Am Anfang war das Licht","Seit es Menschen gibt, sammeln sie sich ums Licht. Es wärmt, es tröstet, es bringt Menschen zusammen."],tr:["Başlangıçta ışık vardı","İnsanlık var olduğundan beri ışığın etrafında toplanır. Isıtır, teselli eder, insanları bir araya getirir."],en:["In the beginning was light","Since the first people, we have gathered around light. It warms, it comforts, it brings us together."],d:"sun"},
+{de:["Aus Sand wird Glas","In der Glut des Ofens schmilzt der Wüstensand. Was eben noch Staub war, wird klar wie Wasser."],tr:["Kumdan cam olur","Fırının közünde çöl kumu erir. Az önce toz olan şey su gibi berraklaşır."],en:["Sand becomes glass","In the furnace the desert sand melts. What was dust becomes clear as water."],d:"glass"},
+{de:["Das Glas bekommt Farbe","Kobalt für das Blau, Kupfer für das Türkis, Gold für das Rubinrot – die Farben des Orients."],tr:["Cam renk alır","Mavi için kobalt, turkuaz için bakır, yakut kırmızısı için altın – Doğu'nun renkleri."],en:["Glass takes on colour","Cobalt for blue, copper for turquoise, gold for ruby red – the colours of the Orient."],d:"colour"},
+{de:["Gebrochen und neu gesetzt","Das farbige Glas wird gebrochen. Stein für Stein setzen geduldige Hände die Splitter zu Mustern."],tr:["Kırılır ve yeniden dizilir","Renkli cam kırılır. Sabırlı eller parçaları taş taş desenlere dizer."],en:["Broken and set anew","The coloured glass is broken. Patient hands set the pieces, one by one, into patterns."],d:"mosaic"},
+{de:["Messing gibt die Form","Ein Gerüst aus Messing hält das Mosaik und gibt jeder Lampe ihre Gestalt – Kugel, Tulpe, Schwan."],tr:["Pirinç şekil verir","Pirinçten bir iskelet mozaiği taşır ve her lambaya şeklini verir – küre, lale, kuğu."],en:["Brass gives the form","A brass frame holds the mosaic and gives each lamp its shape – globe, tulip, swan."],d:"lamp"},
+{de:["Und es wird Licht","Ein Schalter, und der Raum verwandelt sich: warm, ruhig, voller Farben. Ein Licht, das Menschen lächeln lässt."],tr:["Ve ışık olur","Bir düğme ve oda dönüşür: sıcak, huzurlu, renk dolu. İnsanları gülümseten bir ışık."],en:["And there was light","One switch and the room transforms: warm, calm, full of colour. A light that makes people smile."],d:"glow"}];
+const COLS=["#c0392b","#1f6fb2","#1aa39a","#e0a526","#7d3c98","#2e8b57","#d35400"];
+function art(d){const g='<defs><radialGradient id="gl"><stop offset="0" stop-color="#ffe9a8"/><stop offset="1" stop-color="#ffe9a800"/></radialGradient></defs>';
+ let m='';for(let r=0;r<6;r++)for(let c=0;c<8;c++)m+=`<rect x="${60+c*22}" y="${40+r*22}" width="19" height="19" rx="3" fill="${COLS[(r*3+c*5)%7]}"/>`;
+ const lamp=f=>`<path d="M150 30 v20" stroke="#8a6a2c" stroke-width="3"/><path d="M110 60 h80 l-6 8 h-68z" fill="#b8892f"/><ellipse cx="150" cy="120" rx="58" ry="52" fill="${f?'url(#mz)':'#c9a35a'}" stroke="#8a6a2c" stroke-width="3"/><path d="M135 172 h30 l-5 14 h-20z" fill="#b8892f"/>`;
+ const mz=`<pattern id="mz" width="16" height="16" patternUnits="userSpaceOnUse"><rect width="16" height="16" fill="#1f6fb2"/><rect width="7" height="7" fill="#c0392b"/><rect x="8" y="8" width="7" height="7" fill="#e0a526"/><rect x="8" width="7" height="7" fill="#1aa39a"/></pattern>`;
+ const A={sun:`<circle cx="150" cy="110" r="90" fill="url(#gl)"/><circle cx="150" cy="110" r="38" fill="#e0a526"/><path d="M0 200 Q80 160 150 190 T300 180 V230 H0z" fill="#c9a35a"/>`,
+ glass:`<path d="M0 200 Q80 160 150 190 T300 180 V230 H0z" fill="#c9a35a"/><rect x="105" y="40" width="90" height="90" rx="10" fill="#7a3b12"/><circle cx="150" cy="95" r="26" fill="#ff8a2a"/><path d="M150 140 q-18 30 0 50 q18-20 0-50z" fill="#bfe6f2" stroke="#6aa" />`,
+ colour:[0,1,2,3,4].map(i=>`<path d="M${30+i*52} 190 l18-70 h12 l18 70z" fill="${COLS[i]}" opacity=".85"/>`).join(''),
+ mosaic:m,lamp:mz+lamp(0)+'<path d="M95 120 h110 M150 68 v104 M104 92 q46 20 92 0 M104 148 q46-20 92 0" stroke="#8a6a2c" stroke-width="2" fill="none"/>',
+ glow:mz+`<circle cx="150" cy="120" r="115" fill="url(#gl)"/>`+lamp(1)};
+ return `<svg viewBox="0 0 300 230">${g}${A[d]}</svg>`}
+let L="de",bp=0;
+const $=s=>document.querySelector(s),wa=t=>"https://wa.me/491735326963?text="+encodeURIComponent(t);
+function renderBook(anim){const b=BOOK[bp],t=b[L];$("#book").innerHTML=`<div class="leaf l${anim?' turn':''}"><span class="num">${T[L].chap} ${bp+1} / ${BOOK.length}</span><h3>${t[0]}</h3><p>${t[1]}</p></div><div class="leaf r${anim?' turn':''}">${art(b.d)}</div>`;
+ $("#dots").innerHTML=BOOK.map((_,i)=>`<i class="${i==bp?'on':''}"></i>`).join('');$("#prev").disabled=bp==0;$("#next").disabled=bp==BOOK.length-1}
+function renderCat(){let n=0;$("#chapters").innerHTML=C.map((c,i)=>{const items=P[c.k]||[];
+ let h=`<div class="chap"><b>${T[L].chap} ${i+1}</b><h3>${c.n[L]}</h3></div><p class="story">${c.s[L]}</p>`;
+ if(c.coll)h+=`<div class="coll">${Array.from({length:12},(_,j)=>`<div><b>${["I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII"][j]}</b><span>${T[L].coll} · ${T[L].collN}</span></div>`).join('')}</div>`;
+ h+=items.length?`<div class="grid">${items.map(p=>`<button class="card" data-c="${i}" data-f="${p[1]}" data-t="${p[0].replace(/"/g,'&quot;')}"><img loading="lazy" src="${p[1]}" alt="${p[0].replace(/"/g,'&quot;')}"><h4>${p[0]}</h4><small>${T[L].price}</small></button>`).join('')}</div>`:`<p class="soon">${T[L].soon}</p>`;return h}).join('')}
+function renderBanners(){const all=k=>(P[k]||[]).map(p=>`<div class="slide"><img src="${p[1]}" alt="" loading="lazy"><span>${p[0]}</span></div>`).join('');
+ $("#t1").innerHTML=["Mosaiklampen","Marokkanische & Glaslampen","Orientalische Sitzecken","Teppiche & Kelims","Kachel- & Mosaikbilder"].map(all).join('');
+ $("#t2").innerHTML=["Wandteller","Schalen & Dosen","Kissen & Textilien","Schmuck","Vasen, Krüge & Kannen","Uhren","Mokka-Sets & Tassen"].map(all).join('')}
+const wants={de:["Sitzecke","Mosaiklampe","Kelim","Kissen","Wandteller","Vase"],tr:["Şark köşesi","Mozaik lamba","Kilim","Yastık","Duvar tabağı","Vazo"],en:["Floor seating","Mosaic lamp","Kilim","Cushions","Wall plate","Vase"]};
+function renderChips(){$("#chips").innerHTML=wants[L].map(w=>`<label><input type="checkbox" value="${w}"><span>${w}</span></label>`).join('');planLink()}
+function planLink(){const w=[...document.querySelectorAll('#chips input:checked')].map(x=>x.value).join(', ');
+ $("#planwa").href=wa(`Farbenland Raumplaner: ${w||'-'} / Farben: ${$("#col").value||'-'} / ${$("#msg").value}`)}
+function lang(l){L=l;document.documentElement.lang=l;document.querySelectorAll('[data-i]').forEach(e=>{const v=T[l][e.dataset.i];if(v!=null)e.innerHTML=v});
+ document.querySelectorAll('.lang .btn').forEach(b=>b.classList.toggle('on',b.dataset.l==l));$("#music [data-i]").textContent=playing?T[l].musOff:T[l].mus;
+ renderBook();renderCat();renderChips();watch()}
+document.querySelectorAll('.lang .btn').forEach(b=>b.onclick=()=>lang(b.dataset.l));
+$("#prev").onclick=()=>{if(bp>0){bp--;renderBook(1)}};$("#next").onclick=()=>{if(bp<BOOK.length-1){bp++;renderBook(1)}};
+document.addEventListener('keydown',e=>{if($("#dlg").open)return;const r=$("#book").getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0){if(e.key=="ArrowRight")$("#next").click();if(e.key=="ArrowLeft")$("#prev").click()}});
+$("#chapters").addEventListener('click',e=>{const c=e.target.closest('.card');if(!c)return;const k=C[c.dataset.c];
+ $("#dImg").src=c.dataset.f;$("#dImg").alt=c.dataset.t;$("#dT").textContent=c.dataset.t;$("#dCat").textContent=k.n[L];$("#dS").textContent=k.s[L]+" "+T[L].gift;
+ $("#dWa").href=wa(`Farbenland: ${c.dataset.t} – ${T[L].price}?`);$("#dlg").showModal()});
+$("#dx").onclick=()=>$("#dlg").close();$("#dlg").addEventListener('click',e=>{if(e.target.id=="dlg")$("#dlg").close()});
+document.querySelectorAll('.banner').forEach(b=>{const t=b.querySelector('.track');const step=d=>{const w=t.firstElementChild?t.firstElementChild.getBoundingClientRect().width+14:200;
+ if(d>0&&t.scrollLeft+t.clientWidth>=t.scrollWidth-5)t.scrollTo({left:0,behavior:'smooth'});else t.scrollBy({left:d*w,behavior:'smooth'})};
+ b.querySelectorAll('.arrows .btn').forEach(x=>x.onclick=()=>step(+x.dataset.dir));let hold=0;t.onmouseenter=()=>hold=1;t.onmouseleave=()=>hold=0;
+ if(!matchMedia('(prefers-reduced-motion: reduce)').matches)setInterval(()=>{if(!hold&&!document.hidden)step(1)},4000)});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('flipin');io.unobserve(e.target)}}),{threshold:.08});
+function watch(){document.querySelectorAll('.page,.chap').forEach(p=>{if(!p.classList.contains('flipin'))io.observe(p)})}
+const f=$("#file"),dr=$("#drop");f.onchange=()=>show(f.files[0]);
+dr.addEventListener('dragover',e=>e.preventDefault());dr.addEventListener('drop',e=>{e.preventDefault();show(e.dataTransfer.files[0])});
+function show(file){if(!file)return;const u=URL.createObjectURL(file);dr.querySelector('img,video')?.remove();const el=document.createElement(file.type.startsWith('video')?'video':'img');el.src=u;if(el.tagName=='VIDEO'){el.muted=true;el.loop=true;el.autoplay=true}dr.appendChild(el)}
+$("#plan").addEventListener('input',planLink);$("#plan").addEventListener('change',planLink);$("#plan").addEventListener('submit',e=>e.preventDefault());
+let ac,playing=0,timer,master;
+function note(fr,t,len,vol){const o=ac.createOscillator(),g=ac.createGain();o.type='triangle';o.frequency.value=fr;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(vol,t+.02);g.gain.exponentialRampToValueAtTime(.001,t+len);o.connect(g).connect(master);o.start(t);o.stop(t+len+.05)}
+const HIJ=[293.66,311.13,369.99,392,440,466.16,523.25,587.33];
+$("#music").onclick=()=>{try{if(!ac){ac=new (window.AudioContext||window.webkitAudioContext)();master=ac.createGain();master.gain.value=.5;const dl=ac.createDelay();dl.delayTime.value=.33;const fb=ac.createGain();fb.gain.value=.35;master.connect(ac.destination);master.connect(dl);dl.connect(fb).connect(dl);dl.connect(ac.destination)}
+ if(playing){clearInterval(timer);ac.suspend();playing=0}else{ac.resume();playing=1;let i=0;const drone=ac.createOscillator(),dg=ac.createGain();if(!window._dr){drone.type='sine';drone.frequency.value=146.83;dg.gain.value=.05;drone.connect(dg).connect(master);drone.start();window._dr=1}
+ timer=setInterval(()=>{const t=ac.currentTime;if(i%8==0)note(146.83,t,1.6,.12);if(Math.random()<.75)note(HIJ[Math.floor(Math.random()*HIJ.length)]*(Math.random()<.2?.5:1),t,.9,.09);i++},380)}
+ $("#music").setAttribute('aria-pressed',playing);$("#music").classList.toggle('on',!!playing);$("#music [data-i]").textContent=playing?T[L].musOff:T[L].mus}catch(e){}};
+$("#fsoc").innerHTML=document.querySelector('.top .soc').innerHTML;renderBanners();lang("de");
+}</script>
+</body>
+</html>
