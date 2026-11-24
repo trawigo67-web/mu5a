@@ -190,3 +190,8 @@ figure.tile{margin:0}
   .refs{grid-template-columns:repeat(2,1fr)}
   .cards--4{grid-template-columns:1fr}
 }
+.legal{display:grid;grid-template-columns:1fr 1.6fr;gap:2rem;margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(241,234,223,.12);opacity:.85}
+.legal h3{font-family:var(--font-display);font-weight:800;font-size:1.25rem;letter-spacing:.04em;color:var(--paper);margin-bottom:.5rem}
+.legal p{margin-bottom:.6rem;max-width:70ch}
+.legal a{text-decoration:underline}
+@media (max-width:900px){.legal{grid-template-columns:1fr}}
