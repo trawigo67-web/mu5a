@@ -195,3 +195,12 @@ figure.tile{margin:0}
 .legal p{margin-bottom:.6rem;max-width:70ch}
 .legal a{text-decoration:underline}
 @media (max-width:900px){.legal{grid-template-columns:1fr}}
+.career{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2.5rem}
+.career li{border-top:2px solid var(--ink);padding-top:.75rem;display:grid;gap:.35rem;align-content:start}
+.career b{font-family:var(--font-display);font-weight:800;font-size:1.4rem;text-transform:uppercase;line-height:1.1;color:var(--red)}
+.career span{font-size:var(--text-sm)}
+@media (max-width:900px){.career{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.career{grid-template-columns:1fr}}
+.skills{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 2.5rem}
+.skills li{border:1px solid var(--ink);padding:.4rem .85rem;font-size:var(--text-sm);font-weight:600;background:var(--paper)}
+.skills li:nth-child(-n+6){background:var(--ink);color:var(--paper)}

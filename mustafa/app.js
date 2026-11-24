@@ -1,7 +1,7 @@
 (function(){
   var meta={
-    tr:{title:"Mustafa Özel – İstanbul · Karasu · Hamburg | Usta, Proje Yöneticisi, Sporcu",note:"Teşekkürler. Mesajın WhatsApp'ta açıldı, göndermek için onayla.",err:"Lütfen adını ve iletişim bilgini yaz."},
-    de:{title:"Mustafa Özel – Istanbul · Karasu · Hamburg | Handwerker, Projektleiter, Sportler",note:"Danke. Deine Nachricht wurde in WhatsApp geöffnet – bitte dort absenden.",err:"Bitte Name und Kontakt angeben."}
+    tr:{title:"Mustafa Özel – Saha ve Proje Sorumlusu, Sporcu, Antrenör | İstanbul · Sakarya · Hamburg",note:"Teşekkürler. Mesajın WhatsApp'ta açıldı, göndermek için onayla.",err:"Lütfen adını ve iletişim bilgini yaz."},
+    de:{title:"Mustafa Özel – Bau- und Projektleiter, Sportler, Trainer | Istanbul · Sakarya · Hamburg",note:"Danke. Deine Nachricht wurde in WhatsApp geöffnet – bitte dort absenden.",err:"Bitte Name und Kontakt angeben."}
   };
   var current='tr';
   function setLang(l){
