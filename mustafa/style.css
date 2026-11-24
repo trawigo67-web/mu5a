@@ -125,7 +125,7 @@ figure.tile{margin:0}
 .press__kit{background:var(--ink);color:var(--paper);padding:1.25rem 1.5rem!important;margin-top:1rem;border:0!important}
 
 .contact{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5rem)}
-.places{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem}
+.places{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2rem}
 .places div{border-top:2px solid var(--ink);padding-top:.75rem;display:grid}
 .places b{font-family:var(--font-display);font-size:1.6rem;font-weight:800;text-transform:uppercase;line-height:1.1}
 .places span{font-size:var(--text-sm);opacity:.9}
