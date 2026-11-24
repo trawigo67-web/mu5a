@@ -1,7 +1,7 @@
 (function(){
   var meta={
-    tr:{title:"Mustafa Özel – Wushu Milli Takım Antrenörü | Hamburg & Karasu",note:"Teşekkürler. Bu bir taslak: form henüz bağlı değil, mesajın gönderilmedi.",err:"Lütfen adını ve iletişim bilgini yaz."},
-    de:{title:"Mustafa Özel – Wushu-Nationaltrainer | Hamburg & Karasu",note:"Danke. Dies ist ein Entwurf: Das Formular ist noch nicht verbunden, die Nachricht wurde nicht gesendet.",err:"Bitte Name und Kontakt angeben."}
+    tr:{title:"Mustafa Özel – Usta, Proje Yöneticisi, Wushu Milli Takım Antrenörü | Hamburg & Karasu",note:"Teşekkürler. Mesajın WhatsApp'ta açıldı, göndermek için onayla.",err:"Lütfen adını ve iletişim bilgini yaz."},
+    de:{title:"Mustafa Özel – Handwerker, Projektleiter, Wushu-Nationaltrainer | Hamburg & Karasu",note:"Danke. Deine Nachricht wurde in WhatsApp geöffnet – bitte dort absenden.",err:"Bitte Name und Kontakt angeben."}
   };
   var current='tr';
   function setLang(l){
@@ -19,6 +19,6 @@
     e.preventDefault();
     var n=f.querySelector('.form__note');
     if(!f.elements["name"].value.trim()||!f.elements["contact"].value.trim()){n.textContent=meta[current].err;return;}
-    n.textContent=meta[current].note;f.reset();
+    var el=f.elements,t=el['topic'];var txt=el['name'].value.trim()+' ('+el['contact'].value.trim()+')\n'+t.options[t.selectedIndex].text+'\n'+el['msg'].value.trim();window.open('https://wa.me/491729955128?text='+encodeURIComponent(txt),'_blank','noopener');n.textContent=meta[current].note;f.reset();
   });
 })();
