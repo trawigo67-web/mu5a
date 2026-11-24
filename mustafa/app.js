@@ -1,7 +1,7 @@
 (function(){
   var meta={
-    tr:{title:"Mustafa Özel – Usta, Proje Yöneticisi, Wushu Milli Takım Antrenörü | Hamburg & Karasu",note:"Teşekkürler. Mesajın WhatsApp'ta açıldı, göndermek için onayla.",err:"Lütfen adını ve iletişim bilgini yaz."},
-    de:{title:"Mustafa Özel – Handwerker, Projektleiter, Wushu-Nationaltrainer | Hamburg & Karasu",note:"Danke. Deine Nachricht wurde in WhatsApp geöffnet – bitte dort absenden.",err:"Bitte Name und Kontakt angeben."}
+    tr:{title:"Mustafa Özel – Karasu'dan Hamburg'a | Usta, Proje Yöneticisi, Sporcu",note:"Teşekkürler. Mesajın WhatsApp'ta açıldı, göndermek için onayla.",err:"Lütfen adını ve iletişim bilgini yaz."},
+    de:{title:"Mustafa Özel – Von Karasu nach Hamburg | Handwerker, Projektleiter, Sportler",note:"Danke. Deine Nachricht wurde in WhatsApp geöffnet – bitte dort absenden.",err:"Bitte Name und Kontakt angeben."}
   };
   var current='tr';
   function setLang(l){
