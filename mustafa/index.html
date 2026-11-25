@@ -1,21 +1,331 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mustafa Özel → 0zel.de</title>
-<meta name="robots" content="noindex">
-<link rel="canonical" href="https://0zel.de/">
-<meta http-equiv="refresh" content="3; url=http://0zel.de/">
-<script>
-(function () {
-  var done = false;
-  function go(p) { if (!done) { done = true; location.replace(p + "//0zel.de/" + location.hash); } }
-  try { fetch("https://0zel.de/robots.txt", { mode: "no-cors", cache: "no-store" }).then(function () { go("https:"); }, function () { go("http:"); }); }
-  catch (e) { go("http:"); }
-})();
+<title>Mustafa Özel – Saha ve Proje Sorumlusu, Sporcu, Antrenör | İstanbul · Sakarya · Hamburg</title>
+<meta name="description" content="Mustafa Özel (1983, İstanbul Üsküdar): Hamburg'da TT Sanierung'de saha ve proje sorumlusu, çok yönlü tadilat ustası. Fayans, boya, Spachtel, alçıpan, zemin ve banyo tadilatı. Kickboks, Thai boks ve Wushu Sanda sporcusu; İstanbul ve Balkan şampiyonu, 2017 milli takım antrenörü.">
+<meta property="og:title" content="Mustafa Özel – İstanbul · Sakarya · Hamburg">
+<meta property="og:description" content="İstanbul'dan Sakarya'ya, Sakarya'dan Hamburg'a: saha ve proje sorumlusu, sporcu, antrenör.">
+<meta property="og:image" content="assets/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Mustafa Özel","jobTitle":["Bau- und Projektleiter","Sportler und Trainer"],"birthPlace":"Istanbul-Üsküdar","telephone":"+49 172 9955128","email":"Moezel@gmx.de","address":{"@type":"PostalAddress","addressLocality":"Hamburg","addressCountry":"DE"},"sameAs":["https://www.instagram.com/oezell3434/"]}
 </script>
-<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#0e0e0f;color:#efece6;font:18px/1.5 system-ui,sans-serif;text-align:center}a{color:#e0263f}</style>
 </head>
-<body><p>Mustafa Özel'in sayfası taşındı · Die Seite ist umgezogen:<br><a href="http://0zel.de/">0zel.de</a></p></body>
+<body>
+
+<header class="header" id="top">
+  <div class="wrap header__inner">
+    <a href="#top" class="brand" aria-label="Mustafa Özel">MUSTAFA ÖZEL<span>武术</span></a>
+    <nav class="nav" aria-label="Ana menü">
+      <a href="#hakkinda" data-tr="Hakkında" data-de="Über mich">Hakkında</a>
+      <a href="#is" data-tr="İş" data-de="Beruf">İş</a>
+      <a href="#basarilar" data-tr="Başarılar" data-de="Erfolge">Başarılar</a>
+      <a href="#dersler" data-tr="Spor" data-de="Sport">Spor</a>
+      <a href="#galeri" data-tr="Galeri" data-de="Galerie">Galeri</a>
+      <a href="#iletisim" data-tr="İletişim" data-de="Kontakt">İletişim</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Dil / Sprache">
+      <button type="button" data-lang="tr" aria-pressed="true">TR</button>
+      <button type="button" data-lang="de" aria-pressed="false">DE</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <img class="hero__img" src="assets/hero.jpg" alt="" aria-hidden="true">
+    <div class="hero__shade"></div>
+    <div class="wrap hero__content">
+      <p class="kicker" data-tr="Proje sorumlusu · Tadilat ustası · Sporcu · Antrenör" data-de="Projektleiter · Sanierungshandwerker · Sportler · Trainer">Proje sorumlusu · Tadilat ustası · Sporcu · Antrenör</p>
+      <h1>MUSTAFA<br>ÖZEL</h1>
+      <p class="hero__lead" data-tr="İstanbul'dan Sakarya'ya, Sakarya'dan Hamburg'a: el emeği, disiplin ve sözünün eri olmak." data-de="Von Istanbul über Sakarya nach Hamburg: Handwerk, Disziplin und ein Mann, der zu seinem Wort steht.">İstanbul'dan Sakarya'ya, Sakarya'dan Hamburg'a: el emeği, disiplin ve sözünün eri olmak.</p>
+      <div class="hero__cta">
+        <a class="btn btn--red" href="#iletisim" data-tr="İletişime geç" data-de="Kontakt aufnehmen">İletişime geç</a>
+        <a class="btn btn--ghost" href="https://www.instagram.com/oezell3434/" target="_blank" rel="noopener">Instagram @oezell3434</a>
+      </div>
+    </div>
+    <div class="hero__cities wrap" aria-hidden="true"><span>İSTANBUL</span><i></i><span>SAKARYA</span><i></i><span>HAMBURG</span></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section paper" id="hakkinda">
+    <div class="wrap about">
+      <div class="about__text">
+        <p class="label" data-tr="01 — Hakkında" data-de="01 — Über mich">01 — Hakkında</p>
+                <h2 data-tr="Elleriyle çalışan bir adam" data-de="Ein Mann, der mit seinen Händen arbeitet">Elleriyle çalışan bir adam</h2>
+        <p data-tr="Mustafa Özel, 1983'te İstanbul Üsküdar'da doğdu. İnşaat ve tadilat alanında saha ve proje sorumlusu, çok yönlü bir tadilat ustası; aynı zamanda sporcu ve antrenör. Bugün Hamburg'da yaşıyor." data-de="Mustafa Özel wurde 1983 in Istanbul-Üsküdar geboren. Er ist Bau- und Projektleiter im Bau- und Sanierungsbereich, ein vielseitiger Sanierungshandwerker – und zugleich Sportler und Trainer. Heute lebt er in Hamburg.">Mustafa Özel, 1983'te İstanbul Üsküdar'da doğdu. İnşaat ve tadilat alanında saha ve proje sorumlusu, çok yönlü bir tadilat ustası; aynı zamanda sporcu ve antrenör. Bugün Hamburg'da yaşıyor.</p>
+        <p data-tr="14 yaşında inşaat sektöründe çalışmaya başladı. Konut yapımı ve tadilat işlerinde iç mimarlar ve mühendislerle birlikte çalıştı; ardından Marmara Üniversitesi Hastanesi'nde baştekniker, doğalgaz firmalarında yönetici oldu. Fayans, boya, alçı ve Spachtel, alçıpan, zemin kaplama ve banyo tadilatında bizzat uygulama yapıyor. Hamburg'da TT Sanierung'de proje koordinasyonu, saha takibi, teknik çizim ve iç mekân tasarımı işlerini yürütüyor." data-de="Mit 14 Jahren begann er in der Baubranche. Im Wohnungsbau und in der Sanierung arbeitete er mit Innenarchitekten und Ingenieuren zusammen; danach war er Obertechniker am Universitätsklinikum Marmara und in leitender Position bei Erdgasunternehmen. Fliesen, Maler-, Putz- und Spachtelarbeiten, Trockenbau, Bodenbeläge und Badsanierung führt er selbst aus. In Hamburg verantwortet er bei TT Sanierung Projektkoordination, Bauüberwachung, technische Zeichnungen und Innenraumgestaltung.">14 yaşında inşaat sektöründe çalışmaya başladı. Konut yapımı ve tadilat işlerinde iç mimarlar ve mühendislerle birlikte çalıştı; ardından Marmara Üniversitesi Hastanesi'nde baştekniker, doğalgaz firmalarında yönetici oldu. Fayans, boya, alçı ve Spachtel, alçıpan, zemin kaplama ve banyo tadilatında bizzat uygulama yapıyor. Hamburg'da TT Sanierung'de proje koordinasyonu, saha takibi, teknik çizim ve iç mekân tasarımı işlerini yürütüyor.</p>
+        <p data-tr="Spora 10 yaşında başladı: kickboks, Thai boks ve Wushu Sanda. 2005 ve 2006'da İstanbul şampiyonu oldu, 2014–2015'te milli takımda sporcu olarak yer aldı, Balkan şampiyonluğu kazandı ve 2017'de milli takım antrenörlüğü yaptı. Sakarya'da kurduğu Sakarya Fight Club'da ve Pendik'te çocukları ve gençleri spora yönlendirdi, uyuşturucuyla mücadele etti." data-de="Mit zehn Jahren begann er mit dem Sport: Kickboxen, Thaiboxen und Wushu Sanda. 2005 und 2006 wurde er Istanbuler Meister, 2014–2015 gehörte er als Athlet zur Nationalmannschaft, gewann die Balkan-Meisterschaft und war 2017 Nationaltrainer. In Sakarya gründete er den Sakarya Fight Club; dort und in Pendik brachte er Kinder und Jugendliche zum Sport und engagierte sich gegen Drogen.">Spora 10 yaşında başladı: kickboks, Thai boks ve Wushu Sanda. 2005 ve 2006'da İstanbul şampiyonu oldu, 2014–2015'te milli takımda sporcu olarak yer aldı, Balkan şampiyonluğu kazandı ve 2017'de milli takım antrenörlüğü yaptı. Sakarya'da kurduğu Sakarya Fight Club'da ve Pendik'te çocukları ve gençleri spora yönlendirdi, uyuşturucuyla mücadele etti.</p>
+        <p data-tr="Evli ve iki çocuk babası." data-de="Er ist verheiratet und Vater von zwei Kindern.">Evli ve iki çocuk babası.</p>
+        <blockquote data-tr="“Karasu için çıktım ve eli boş dönmüyorum.”" data-de="„Ich bin für Karasu angetreten und komme nicht mit leeren Händen zurück.“">“Karasu için çıktım ve eli boş dönmüyorum.”</blockquote>
+      </div>
+      <figure class="about__img">
+        <img src="assets/ig-portre.jpg" alt="Mustafa Özel portre" loading="lazy">
+        <figcaption data-tr="Fotoğraf: Instagram @oezell3434" data-de="Foto: Instagram @oezell3434">Fotoğraf: Instagram @oezell3434</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="section work" id="is">
+    <div class="wrap">
+      <p class="label" data-tr="02 — İş" data-de="02 — Beruf">02 — İş</p>
+      <h2 data-tr="Ustalık 14 yaşında başladı" data-de="Auf dem Bau seit dem 14. Lebensjahr">Ustalık 14 yaşında başladı</h2>
+      <div class="work__intro">
+        <p data-tr="Mustafa Özel, Hamburg'da TT Sanierung'de saha ve proje sorumlusu. İnşaat ve tadilat projelerinin uygulamasını ve koordinasyonunu yürütüyor; saha çalışmalarının yanında teknik çizim ve iç mekân tasarımı süreçlerinde de görev alıyor. Çok yönlü bir usta olarak işin her aşamasını sahada bizzat biliyor." data-de="Mustafa Özel ist Bau- und Projektleiter bei TT Sanierung in Hamburg. Er verantwortet Ausführung und Koordination von Bau- und Sanierungsprojekten und arbeitet neben der Baustelle auch an technischen Zeichnungen und Innenraumgestaltung. Als vielseitiger Handwerker kennt er jeden Arbeitsschritt aus eigener Praxis.">Mustafa Özel, Hamburg'da TT Sanierung'de saha ve proje sorumlusu. İnşaat ve tadilat projelerinin uygulamasını ve koordinasyonunu yürütüyor; saha çalışmalarının yanında teknik çizim ve iç mekân tasarımı süreçlerinde de görev alıyor. Çok yönlü bir usta olarak işin her aşamasını sahada bizzat biliyor.</p>
+        <p class="work__lead" data-tr="Şantiyede öğrendiği şey hayatının her alanında geçerli: sabır, düzen ve işi sonuna kadar doğru yapmak." data-de="Was er auf der Baustelle gelernt hat, gilt in seinem ganzen Leben: Geduld, Ordnung und eine Arbeit, die bis zum Ende sauber gemacht wird.">Şantiyede öğrendiği şey hayatının her alanında geçerli: sabır, düzen ve işi sonuna kadar doğru yapmak.</p>
+      </div>
+      <ul class="skills" aria-label="Uzmanlık">
+        <li data-tr="Fayans döşeme" data-de="Fliesenlegen">Fayans döşeme</li>
+        <li data-tr="Boya" data-de="Malerarbeiten">Boya</li>
+        <li data-tr="Alçı ve Spachtel" data-de="Putz & Spachtel">Alçı ve Spachtel</li>
+        <li data-tr="Alçıpan" data-de="Trockenbau">Alçıpan</li>
+        <li data-tr="Zemin kaplama" data-de="Bodenbeläge">Zemin kaplama</li>
+        <li data-tr="Banyo tadilatı" data-de="Badsanierung">Banyo tadilatı</li>
+        <li data-tr="Proje koordinasyonu" data-de="Projektkoordination">Proje koordinasyonu</li>
+        <li data-tr="Saha takibi" data-de="Bauüberwachung">Saha takibi</li>
+        <li data-tr="Teknik çizim" data-de="Technische Zeichnungen">Teknik çizim</li>
+        <li data-tr="İç mekân tasarımı" data-de="Innenraumgestaltung">İç mekân tasarımı</li>
+      </ul>
+      <ol class="career">
+        <li><b data-tr="14 yaş" data-de="Mit 14">14 yaş</b><span data-tr="İnşaat sektörüne giriş: konut yapımı ve tadilat, iç mimarlar ve mühendislerle birlikte." data-de="Einstieg in die Baubranche: Wohnungsbau und Sanierung, gemeinsam mit Innenarchitekten und Ingenieuren.">İnşaat sektörüne giriş: konut yapımı ve tadilat, iç mimarlar ve mühendislerle birlikte.</span></li>
+        <li><b data-tr="Baştekniker" data-de="Obertechniker">Baştekniker</b><span data-tr="Marmara Üniversitesi Hastanesi'nde baştekniker." data-de="Obertechniker am Universitätsklinikum Marmara.">Marmara Üniversitesi Hastanesi'nde baştekniker.</span></li>
+        <li><b data-tr="Yönetici" data-de="Leitung">Yönetici</b><span data-tr="Doğalgaz firmalarında yönetici." data-de="Leitende Position bei Erdgasunternehmen.">Doğalgaz firmalarında yönetici.</span></li>
+        <li><b data-tr="Hamburg" data-de="Hamburg">Hamburg</b><span data-tr="TT Sanierung'de saha ve proje sorumlusu: uygulama, koordinasyon, teknik çizim, iç mekân tasarımı." data-de="Bau- und Projektleiter bei TT Sanierung: Ausführung, Koordination, technische Zeichnungen, Innenraumgestaltung.">TT Sanierung'de saha ve proje sorumlusu: uygulama, koordinasyon, teknik çizim, iç mekân tasarımı.</span></li>
+      </ol>
+      <div class="stats stats--paper">
+        <div class="stat"><b>14</b><span data-tr="yaşından beri inşaat sektöründe" data-de="Jahre alt: Einstieg in die Baubranche">yaşından beri inşaat sektöründe</span></div>
+        <div class="stat"><b>1150+</b><span data-tr="tamamlanmış proje (TT Sanierung)" data-de="abgeschlossene Projekte (TT Sanierung)">tamamlanmış proje (TT Sanierung)</span></div>
+        <div class="stat"><b>40+</b><span data-tr="çalışan" data-de="Mitarbeiter">çalışan</span></div>
+        <div class="stat"><b>50+</b><span data-tr="şehir, 5 eyalet" data-de="Städte in 5 Bundesländern">şehir, 5 eyalet</span></div>
+      </div>
+      <div class="refs">
+          <figure class="ref ref--wide"><img src="assets/is-gartenhaus-vorher.jpg" alt="Gartenhaus: vorher" loading="lazy" width="1000" height="750"><figcaption data-tr="Bahçe evi: önce" data-de="Gartenhaus: vorher">Bahçe evi: önce</figcaption></figure>
+          <figure class="ref ref--wide"><img src="assets/is-gartenhaus-nachher.jpg" alt="Gartenhaus: nachher, mit Terrasse" loading="lazy" width="1000" height="750"><figcaption data-tr="Bahçe evi: sonra, teras ile" data-de="Gartenhaus: nachher, mit Terrasse">Bahçe evi: sonra, teras ile</figcaption></figure>
+          <figure class="ref"><img src="assets/is-bad.jpg" alt="Modernes Badezimmer" loading="lazy" width="750" height="1000"><figcaption data-tr="Modern banyo" data-de="Modernes Badezimmer">Modern banyo</figcaption></figure>
+          <figure class="ref"><img src="assets/is-kueche.jpg" alt="Küche mit LED-Beleuchtung" loading="lazy" width="750" height="1000"><figcaption data-tr="LED aydınlatmalı mutfak" data-de="Küche mit LED-Beleuchtung">LED aydınlatmalı mutfak</figcaption></figure>
+          <figure class="ref"><img src="assets/is-treppe.jpg" alt="Treppe mit Edelstahlgeländer" loading="lazy" width="750" height="1000"><figcaption data-tr="Paslanmaz korkuluklu merdiven" data-de="Treppe mit Edelstahlgeländer">Paslanmaz korkuluklu merdiven</figcaption></figure>
+          <figure class="ref"><img src="assets/is-saeulen.jpg" alt="Restaurierte Säulen und Rundbogen" loading="lazy" width="750" height="1000"><figcaption data-tr="Restore edilmiş sütunlar ve kemer" data-de="Restaurierte Säulen und Rundbogen">Restore edilmiş sütunlar ve kemer</figcaption></figure>
+          <figure class="ref ref--wide"><img src="assets/is-salon.jpg" alt="Friseursalon Innenausbau" loading="lazy" width="1000" height="750"><figcaption data-tr="Kuaför salonu iç mekân" data-de="Friseursalon Innenausbau">Kuaför salonu iç mekân</figcaption></figure>
+          <figure class="ref"><img src="assets/is-terrasse.jpg" alt="Terrasse mit Granitplatten" loading="lazy" width="750" height="1000"><figcaption data-tr="Granit plakalı teras" data-de="Terrasse mit Granitplatten">Granit plakalı teras</figcaption></figure>
+          <figure class="ref"><img src="assets/is-wandpaneel.jpg" alt="Wandpaneel mit Spiegel und Konsole" loading="lazy" width="750" height="1000"><figcaption data-tr="Aynalı duvar paneli ve konsol" data-de="Wandpaneel mit Spiegel und Konsole">Aynalı duvar paneli ve konsol</figcaption></figure>
+      </div>
+      <p class="work__more"><a class="btn btn--ink" href="https://www.tt-sanierung.de/referenzen" target="_blank" rel="noopener" data-tr="Tüm referanslar: 17 fotoğraf, 29 video" data-de="Alle Referenzen: 17 Fotos, 29 Videos">Tüm referanslar: 17 fotoğraf, 29 video</a> <a class="work__site" href="https://www.tt-sanierung.de" target="_blank" rel="noopener">tt-sanierung.de</a></p>
+      <p class="work__src" data-tr="Fotoğraflar: TT Sanierung GmbH referansları" data-de="Fotos: Referenzen der TT Sanierung GmbH">Fotoğraflar: TT Sanierung GmbH referansları</p>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section class="section ink" id="basarilar">
+    <div class="wrap">
+      <p class="label" data-tr="03 — Başarılar" data-de="03 — Erfolge">03 — Başarılar</p>
+      <h2 data-tr="Sporda bir hayat" data-de="Ein Leben im Sport">Sporda bir hayat</h2>
+      <div class="stats">
+        <div class="stat"><b>2005–06</b><span data-tr="İstanbul şampiyonu" data-de="Istanbuler Meister">İstanbul şampiyonu</span></div>
+        <div class="stat"><b>2014–15</b><span data-tr="milli takım sporcusu" data-de="Athlet der Nationalmannschaft">milli takım sporcusu</span></div>
+        <div class="stat"><b>2016</b><span data-tr="Balkan Wushu şampiyonu" data-de="Balkan-Wushu-Champion">Balkan Wushu şampiyonu</span></div>
+        <div class="stat"><b>2017</b><span data-tr="milli takım antrenörü" data-de="Nationaltrainer">milli takım antrenörü</span></div>
+      </div>
+      <ol class="timeline">
+        <li><time data-tr="10 yaş" data-de="Mit 10">10 yaş</time><p data-tr="Kickboks, Thai boks ve Wushu Sanda ile spora başlangıç." data-de="Einstieg in den Sport mit Kickboxen, Thaiboxen und Wushu Sanda.">Kickboks, Thai boks ve Wushu Sanda ile spora başlangıç.</p></li>
+        <li><time>2005–2006</time><p data-tr="İstanbul şampiyonlukları." data-de="Istanbuler Meistertitel.">İstanbul şampiyonlukları.</p></li>
+        <li><time>2009–2012</time><p data-tr="İstanbul Pendik'te Dumlupınar Merkez Camii Derneği başkanı. Caminin alt katını spor salonuna dönüştürdü; çocuklara spor çalışmaları yaptı, gençleri uyuşturucudan uzak tuttu." data-de="Vorsitzender des Vereins der Dumlupınar-Merkez-Moschee in Istanbul-Pendik. Er baute das Untergeschoss der Moschee zur Sporthalle um, trainierte Kinder und hielt Jugendliche von Drogen fern.">İstanbul Pendik'te Dumlupınar Merkez Camii Derneği başkanı. Caminin alt katını spor salonuna dönüştürdü; çocuklara spor çalışmaları yaptı, gençleri uyuşturucudan uzak tuttu.</p></li>
+        <li><time>2014–2015</time><p data-tr="Milli takımda sporcu." data-de="Athlet der Nationalmannschaft.">Milli takımda sporcu.</p></li>
+        <li><time>01/2016</time><p data-tr="Sakarya'da Türkiye Wushu Federasyonu antrenör eğitim kursu (17–27 Ocak) ve Duan sınavı: 1. Duan derecesi. 3 Mart 2016'da 1. Kademe Yardımcı Antrenör belgesi." data-de="Trainerlehrgang des türkischen Wushu-Verbands in Sakarya (17.–27. Januar) und Duan-Prüfung: 1. Duan. Am 3. März 2016 folgt die Trainerlizenz (1. Stufe, Assistenztrainer).">Sakarya'da Türkiye Wushu Federasyonu antrenör eğitim kursu (17–27 Ocak) ve Duan sınavı: 1. Duan derecesi. 3 Mart 2016'da 1. Kademe Yardımcı Antrenör belgesi.</p></li>
+        <li><time>06/2016</time><p data-tr="İstanbul'da Balkan Wushu Federasyonu'nun düzenlediği 3. Açık Balkan Wushu Kungfu Şampiyonası (3–5 Haziran): 10 takımdan 350 sporcu arasında şampiyon. Öz Karasu gazetesi manşetten verdi." data-de="3. Offene Balkan-Wushu-Kungfu-Meisterschaft des Balkan-Wushu-Verbands in Istanbul (3.–5. Juni): Champion unter 350 Athleten aus 10 Teams. Die Zeitung Öz Karasu brachte es auf die Titelseite.">İstanbul'da Balkan Wushu Federasyonu'nun düzenlediği 3. Açık Balkan Wushu Kungfu Şampiyonası (3–5 Haziran): 10 takımdan 350 sporcu arasında şampiyon. Öz Karasu gazetesi manşetten verdi.</p></li>
+        <li><time>09/2016</time><p data-tr="Sakarya'da wushu hakem eğitim kursu (2–4 Eylül): Aday Hakem diploması. Sakarya Wushu İl Temsilciliği'nde hakemlik." data-de="Kampfrichterlehrgang Wushu in Sakarya (2.–4. September): Kampfrichter-Diplom (Anwärter). Kampfrichter für die Wushu-Vertretung der Provinz Sakarya.">Sakarya'da wushu hakem eğitim kursu (2–4 Eylül): Aday Hakem diploması. Sakarya Wushu İl Temsilciliği'nde hakemlik.</p></li>
+        <li><time>2017</time><p data-tr="Milli takım antrenörü." data-de="Nationaltrainer.">Milli takım antrenörü.</p></li>
+        <li><time>Sakarya</time><p data-tr="Sakarya Fight Club'ı kurdu: çocukları ve gençleri spora yönlendirdi, uyuşturucuyla mücadele çalışmaları yaptı." data-de="Gründung des Sakarya Fight Club: Kinder und Jugendliche zum Sport bringen, Engagement gegen Drogen.">Sakarya Fight Club'ı kurdu: çocukları ve gençleri spora yönlendirdi, uyuşturucuyla mücadele çalışmaları yaptı.</p></li>
+        <li><time data-tr="Bugün" data-de="Heute">Bugün</time><p data-tr="Hamburg'da yaşıyor; TT Sanierung'de saha ve proje sorumlusu." data-de="Lebt in Hamburg; Bau- und Projektleiter bei TT Sanierung.">Hamburg'da yaşıyor; TT Sanierung'de saha ve proje sorumlusu.</p></li>
+      </ol>
+      <p class="certs" data-tr="Belgeler: Türkiye Wushu Federasyonu 1. Kademe Yardımcı Antrenör (2016) · 1. Duan (2016) · Aday Hakem (2016) · 3. Balkan Wushu Kungfu Şampiyonası katılım belgesi (2016)" data-de="Urkunden: Trainerlizenz 1. Stufe des türkischen Wushu-Verbands (2016) · 1. Duan (2016) · Kampfrichter-Anwärter (2016) · Teilnahmeurkunde 3. Balkan-Wushu-Kungfu-Meisterschaft (2016)">Belgeler: Türkiye Wushu Federasyonu 1. Kademe Yardımcı Antrenör (2016) · 1. Duan (2016) · Aday Hakem (2016) · 3. Balkan Wushu Kungfu Şampiyonası katılım belgesi (2016)</p>
+    </div>
+  </section>
+
+  <!-- DISCIPLINES & SERVICES -->
+  <section class="section paper" id="dersler">
+    <div class="wrap">
+      <p class="label" data-tr="04 — Spor" data-de="04 — Sport">04 — Spor</p>
+      <h2 data-tr="Dövüş sanatları ve geleneksel sporlar" data-de="Kampfkunst und traditionelle Disziplinen">Dövüş sanatları ve geleneksel sporlar</h2>
+      <div class="cards cards--4">
+        <article class="card card--main">
+          <span class="card__no">散打</span>
+          <h3>Wushu Sanda</h3>
+          <p data-tr="Ana branşı. Wushu'nun dövüş branşı: yumruk, tekme ve atış teknikleri. Balkan şampiyonluğunu bu branşta kazandı." data-de="Seine Hauptdisziplin. Der Vollkontakt-Stil des Wushu: Schläge, Tritte und Würfe. Hier wurde er Balkan-Champion.">Ana branşı. Wushu'nun dövüş branşı: yumruk, tekme ve atış teknikleri. Balkan şampiyonluğunu bu branşta kazandı.</p>
+        </article>
+        <article class="card">
+          <span class="card__no">拳</span>
+          <h3 data-tr="Kickboks · Thai boks · Boks" data-de="Kickboxen · Thaiboxen · Boxen">Kickboks · Thai boks · Boks</h3>
+          <p data-tr="10 yaşından beri ringde: kondisyon, refleks ve temiz teknik. İstanbul şampiyonlukları bu yıllardan." data-de="Seit dem zehnten Lebensjahr im Ring: Kondition, Reflexe und saubere Technik. Aus dieser Zeit stammen seine Istanbuler Meistertitel.">10 yaşından beri ringde: kondisyon, refleks ve temiz teknik. İstanbul şampiyonlukları bu yıllardan.</p>
+        </article>
+        <article class="card">
+          <span class="card__no">弓</span>
+          <h3 data-tr="Okçuluk · Binicilik · Kılıç" data-de="Bogenschießen · Reiten · Schwert">Okçuluk · Binicilik · Kılıç</h3>
+          <p data-tr="Geleneksel sporlar: odak, denge, sabır ve saygı." data-de="Traditionelle Disziplinen: Fokus, Gleichgewicht, Geduld und Respekt.">Geleneksel sporlar: odak, denge, sabır ve saygı.</p>
+        </article>
+        <article class="card">
+          <span class="card__no">少年</span>
+          <h3 data-tr="Gençlik çalışması" data-de="Jugendarbeit">Gençlik çalışması</h3>
+          <p data-tr="Pendik'te caminin alt katını spor salonuna çevirdi, Sakarya'da Sakarya Fight Club'ı kurdu. Amacı hep aynı: çocukları spora yönlendirmek, gençleri uyuşturucudan uzak tutmak." data-de="In Pendik baute er das Untergeschoss einer Moschee zur Sporthalle um, in Sakarya gründete er den Sakarya Fight Club. Sein Ziel: Kinder zum Sport bringen und Jugendliche von Drogen fernhalten.">Pendik'te caminin alt katını spor salonuna çevirdi, Sakarya'da Sakarya Fight Club'ı kurdu. Amacı hep aynı: çocukları spora yönlendirmek, gençleri uyuşturucudan uzak tutmak.</p>
+        </article>
+      </div>
+      <figure class="wide-photo"><img src="assets/sahil-antrenman.jpg" alt="Mustafa Özel sahilde gençlerle kick boks antrenmanında" loading="lazy" width="1124" height="574"><figcaption data-tr="Sahilde gençlerle antrenman" data-de="Training mit Jugendlichen am Strand">Sahilde gençlerle antrenman</figcaption></figure>
+      <div class="services">
+        <figure class="services__img"><img src="assets/fight-club.jpg" alt="Mustafa Özel, Sakarya Fight Club salonunda kick boks duruşunda" loading="lazy" width="705" height="940"><figcaption data-tr="Sakarya Fight Club salonunda" data-de="Im Sakarya Fight Club">Sakarya Fight Club salonunda</figcaption></figure>
+        <ul class="services__list">
+          <li><b data-tr="El emeği" data-de="Handwerk">El emeği</b><span data-tr="14 yaşından beri sahada; işini iç mimarlar ve mühendislerle, büyük projelerde öğrendi." data-de="Seit dem 14. Lebensjahr auf der Baustelle – gelernt an der Seite von Innenarchitekten und Ingenieuren.">14 yaşından beri sahada; işini iç mimarlar ve mühendislerle, büyük projelerde öğrendi.</span></li>
+          <li><b data-tr="Disiplin" data-de="Disziplin">Disiplin</b><span data-tr="Şantiyede de ringde de aynı kural: işi yarım bırakmamak." data-de="Auf der Baustelle wie im Ring gilt dieselbe Regel: Nichts wird halb gemacht.">Şantiyede de ringde de aynı kural: işi yarım bırakmamak.</span></li>
+          <li><b data-tr="Gençlere örnek olmak" data-de="Vorbild für die Jugend">Gençlere örnek olmak</b><span data-tr="Pendik'te ve Sakarya'da çocukları spora yönlendirdi, uyuşturucuyla mücadele etti." data-de="In Pendik und Sakarya brachte er Kinder zum Sport und engagierte sich gegen Drogen.">Pendik'te ve Sakarya'da çocukları spora yönlendirdi, uyuşturucuyla mücadele etti.</span></li>
+          <li><b data-tr="Memleket" data-de="Heimat">Memleket</b><span data-tr="İstanbul'da doğdu, Sakarya için yarıştı; kökünü hiç unutmadı." data-de="Geboren in Istanbul, angetreten für Sakarya – seine Wurzeln hat er nie vergessen.">İstanbul'da doğdu, Sakarya için yarıştı; kökünü hiç unutmadı.</span></li>
+          <li><b data-tr="İki ülke" data-de="Zwei Länder">İki ülke</b><span data-tr="İstanbul'da yetişti, bugün Hamburg'da yaşıyor ve çalışıyor; Türkiye ile bağını koruyor." data-de="Aufgewachsen in Istanbul, lebt und arbeitet er heute in Hamburg – und bleibt der Türkei eng verbunden.">İstanbul'da yetişti, bugün Hamburg'da yaşıyor ve çalışıyor; Türkiye ile bağını koruyor.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section ink" id="galeri">
+    <div class="wrap">
+      <p class="label" data-tr="05 — Galeri" data-de="05 — Galerie">05 — Galeri</p>
+      <h2 data-tr="Kareler" data-de="Momente">Kareler</h2>
+      <div class="gallery">
+        <a class="tile tile--big" href="https://www.instagram.com/reel/DboIEV0tsCV/" target="_blank" rel="noopener">
+          <img src="assets/ig-denge.jpg" alt="Mustafa Özel sahilde tek elle denge hareketi yapıyor" loading="lazy"><span class="play" aria-hidden="true">▶</span>
+          <span class="tile__cap" data-tr="Video: Sahilde tek elle denge" data-de="Video: Einarmiger Handstand am Strand">Video: Sahilde tek elle denge</span>
+        </a>
+        <a class="tile " href="https://www.instagram.com/p/CgcCUDdsCEL/" target="_blank" rel="noopener">
+          <img src="assets/ig-madalya.jpg" alt="Mustafa Özel boynunda madalyayla" loading="lazy">
+          <span class="tile__cap" data-tr="Madalya" data-de="Medaille">Madalya</span>
+        </a>
+        <a class="tile " href="https://www.instagram.com/p/C5MMRRmrCeW/" target="_blank" rel="noopener">
+          <img src="assets/ig-portre-motor.jpg" alt="Mustafa Özel Hamburg'da motosikletinin üzerinde" loading="lazy">
+          <span class="tile__cap" data-tr="Hamburg" data-de="Hamburg">Hamburg</span>
+        </a>
+        <a class="tile " href="https://www.instagram.com/p/DeRitgGNJbF/" target="_blank" rel="noopener">
+          <img src="assets/ig-deniz.jpg" alt="Mustafa Özel denizde, sırtı dönük" loading="lazy">
+          <span class="tile__cap" data-tr="Kondisyon" data-de="Kondition">Kondisyon</span>
+        </a>
+        <a class="tile " href="https://www.instagram.com/p/DePkxFBxRyY/" target="_blank" rel="noopener">
+          <img src="assets/ig-valencia.jpg" alt="Mustafa Özel Valencia'da" loading="lazy">
+          <span class="tile__cap" data-tr="Seyahat" data-de="Unterwegs">Seyahat</span>
+        </a>
+        <figure class="tile">
+          <img src="assets/foto-merdiven.jpg" alt="Mustafa Özel merdivende tek elle denge duruşu" loading="lazy">
+          <span class="tile__cap" data-tr="Merdivende tek elle denge" data-de="Einarmiger Stand auf der Treppe">Merdivende tek elle denge</span>
+        </figure>
+        <figure class="tile">
+          <img style="object-position:center 30%" src="assets/foto-bayrak.jpg" alt="Mustafa Özel Türk bayrağının altında" loading="lazy">
+          <span class="tile__cap" data-tr="Bayrağın altında" data-de="Unter der Flagge">Bayrağın altında</span>
+        </figure>
+        <figure class="tile">
+          <img src="assets/foto-gard.jpg" alt="Mustafa Özel gard pozisyonunda, siyah beyaz" loading="lazy">
+          <span class="tile__cap" data-tr="Gard" data-de="Kampfhaltung">Gard</span>
+        </figure>
+        <figure class="tile">
+          <img style="object-position:center 15%" src="assets/foto-takim.jpg" alt="Mustafa Özel takım elbiseyle" loading="lazy">
+          <span class="tile__cap" data-tr="Resmi" data-de="Offiziell">Resmi</span>
+        </figure>
+      </div>
+      <a class="insta" href="https://www.instagram.com/oezell3434/" target="_blank" rel="noopener" data-tr="22 bin takipçiyle Instagram'da: @oezell3434 →" data-de="Mit 22.000 Followern auf Instagram: @oezell3434 →">22 bin takipçiyle Instagram'da: @oezell3434 →</a>
+    </div>
+  </section>
+
+  <!-- PRESS -->
+  <section class="section paper" id="basin">
+    <div class="wrap press">
+      <div>
+        <p class="label" data-tr="06 — Basın" data-de="06 — Presse">06 — Basın</p>
+        <h2 data-tr="Basında Mustafa Özel" data-de="Mustafa Özel in den Medien">Basında Mustafa Özel</h2>
+      </div>
+      <div class="press__body">
+        <figure class="clip clip--main">
+          <img src="assets/basin-ozel-gururumuz.jpg" alt="Öz Karasu gazetesi, sayfa 2: Özel, gururumuz oldu" loading="lazy" width="905" height="970">
+        </figure>
+        <div class="press__side">
+          <figure class="clip">
+            <img src="assets/basin-manset.jpg" alt="Öz Karasu gazetesi manşeti: Mustafa Özel gururumuz oldu" loading="lazy" width="750" height="440">
+          </figure>
+          <p class="press__src">Öz Karasu · <span data-tr="13–19 Haziran 2016 · Manşet ve sayfa 2" data-de="13.–19. Juni 2016 · Titelseite und Seite 2">13–19 Haziran 2016 · Manşet ve sayfa 2</span></p>
+          <blockquote class="press__quote" data-tr="“Allah'ıma hamdolsun ki şampiyon olarak dönmeyi nasip etti. Karasu için çıktım ve eli boş dönmüyorum.”" data-de="„Gott sei Dank durfte ich als Champion zurückkehren. Ich bin für Karasu angetreten und komme nicht mit leeren Händen zurück.“">“Allah'ıma hamdolsun ki şampiyon olarak dönmeyi nasip etti. Karasu için çıktım ve eli boş dönmüyorum.”</blockquote>
+          <p class="press__sum" data-tr="Karasulu wushu antrenörü Mustafa Özel, Balkan Wushu Federasyonu'nun düzenlediği 3. Açık Balkan Wushu Şampiyonası'ndan şampiyon olarak döndü. Turnuvada 10 takımdan 350 sporcu mücadele etti." data-de="Der Wushu-Trainer Mustafa Özel aus Karasu kehrte als Champion von der 3. Offenen Balkan-Wushu-Meisterschaft des Balkan-Wushu-Verbands zurück. Im Turnier traten 350 Athleten aus 10 Teams an.">Karasulu wushu antrenörü Mustafa Özel, Balkan Wushu Federasyonu'nun düzenlediği 3. Açık Balkan Wushu Şampiyonası'ndan şampiyon olarak döndü. Turnuvada 10 takımdan 350 sporcu mücadele etti.</p>
+        </div>
+      </div>
+
+        <figure class="clip clip--wide">
+          <img src="assets/basin-pendik.jpg" alt="Gazete haberi: Hamza Yerlikaya Spor Kulübü, Pendik – Kick Box antrenörü Mustafa Özel" loading="lazy" width="1400" height="413">
+          <figcaption data-tr="Pendik · Hamza Yerlikaya Spor Kulübü: Kulüp başkanı ve Kick Box antrenörü Mustafa Özel. Sporcular Edirne'deki uluslararası turnuvadan madalyalarla döndü." data-de="Pendik · Sportverein Hamza Yerlikaya: Vereinsvorsitzender und Kickbox-Trainer Mustafa Özel. Seine Athleten kehrten mit Medaillen vom internationalen Turnier in Edirne zurück.">Pendik · Hamza Yerlikaya Spor Kulübü: Kulüp başkanı ve Kick Box antrenörü Mustafa Özel. Sporcular Edirne'deki uluslararası turnuvadan madalyalarla döndü.</figcaption>
+        </figure>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section red" id="iletisim">
+    <div class="wrap contact">
+      <div>
+        <p class="label" data-tr="07 — İletişim" data-de="07 — Kontakt">07 — İletişim</p>
+        <h2 data-tr="Mustafa Özel'e yazın" data-de="Schreiben Sie Mustafa Özel">Mustafa Özel'e yazın</h2>
+        <div class="places">
+          <div><b>İstanbul</b><span data-tr="Doğduğu ve mesleğini öğrendiği şehir" data-de="Geburtsort, hier lernte er sein Handwerk">Doğduğu ve mesleğini öğrendiği şehir</span></div>
+          <div><b>Sakarya</b><span data-tr="Sakarya Fight Club'ı kurduğu yer" data-de="Hier gründete er den Sakarya Fight Club">Sakarya Fight Club'ı kurduğu yer</span></div>
+          <div><b>Hamburg</b><span data-tr="Yaşadığı ve çalıştığı şehir" data-de="Wohn- und Arbeitsort">Yaşadığı ve çalıştığı şehir</span></div>
+        </div>
+        <ul class="channels">
+          <li><a href="mailto:Moezel@gmx.de">Moezel@gmx.de</a></li>
+          <li><a href="https://wa.me/491729955128" target="_blank" rel="noopener">WhatsApp: +49 172 9955128</a></li>
+          <li><a href="tel:+491729955128" data-tr="Telefon: +49 172 9955128" data-de="Telefon: +49 172 9955128">Telefon: +49 172 9955128</a></li>
+          <li><a href="https://www.instagram.com/oezell3434/" target="_blank" rel="noopener">Instagram @oezell3434</a></li>
+        </ul>
+      </div>
+      <form class="form" id="contactForm" novalidate>
+        <label><span data-tr="Ad Soyad" data-de="Name">Ad Soyad</span><input name="name" required autocomplete="name"></label>
+        <label><span data-tr="E-posta veya telefon" data-de="E-Mail oder Telefon">E-posta veya telefon</span><input name="contact" required></label>
+        <label><span data-tr="İlgi alanı" data-de="Interesse">İlgi alanı</span>
+          <select name="topic">
+            <option data-tr="Genel" data-de="Allgemein">Genel</option>
+            <option data-tr="İş / tadilat projesi" data-de="Beruf / Sanierungsprojekt">İş / tadilat projesi</option>
+            <option data-tr="Spor" data-de="Sport">Spor</option>
+            <option data-tr="Basın / röportaj" data-de="Presse / Interview">Basın / röportaj</option>
+            <option data-tr="Diğer" data-de="Sonstiges">Diğer</option>
+          </select>
+        </label>
+        <label><span data-tr="Mesaj" data-de="Nachricht">Mesaj</span><textarea name="msg" rows="4"></textarea></label>
+        <button class="btn btn--ink" type="submit" data-tr="Gönder" data-de="Senden">Gönder</button>
+        <p class="form__note" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <span>© 2026 Mustafa Özel</span>
+    <nav aria-label="Yasal">
+      <a href="#impressum">Impressum</a>
+      <a href="#datenschutz">Datenschutz</a>
+    </nav>
+  </div>
+  <div class="wrap legal">
+    <section id="impressum" class="legal__block">
+      <h3>Impressum</h3>
+      <p>Angaben gemäß § 5 DDG</p>
+      <p>Mustafa Özel<br>[Straße und Hausnummer]<br>[PLZ] Hamburg<br>Deutschland</p>
+      <p>Telefon: <a href="tel:+491729955128">+49 172 9955128</a><br>E-Mail: <a href="mailto:Moezel@gmx.de">Moezel@gmx.de</a></p>
+      <p>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV: Mustafa Özel, Anschrift wie oben.</p>
+      <p>Bildnachweis: Mustafa Özel (Instagram @oezell3434); Referenzfotos: TT Sanierung GmbH.</p>
+    </section>
+    <section id="datenschutz" class="legal__block">
+      <h3>Datenschutz</h3>
+      <p>Verantwortlicher: Mustafa Özel, Kontaktdaten siehe Impressum. Diese Website setzt keine Cookies und verwendet keine Analyse-Tools. Das Kontaktformular speichert keine Daten. Beim Absenden wird WhatsApp (WhatsApp Ireland Ltd.) mit Ihrer Nachricht geöffnet; es gelten die Datenschutzbestimmungen von WhatsApp. Schriftarten werden von Google Fonts (Google Ireland Ltd.) geladen, dabei wird Ihre IP-Adresse an Google übertragen. Die Website wird über GitHub Pages (GitHub Inc.) bereitgestellt, das technisch notwendige Server-Logdaten verarbeitet. Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Widerspruch sowie Beschwerde bei einer Datenschutz-Aufsichtsbehörde.</p>
+    </section>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
 </html>
